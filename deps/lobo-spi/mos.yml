@@ -1,0 +1,24 @@
+author: mongoose-os
+type: lib
+description: ESP32 SPI lib
+version: 0.1
+
+sources:
+  - src
+
+includes:
+  - include
+
+# filesystem:
+#   - fs
+
+# config_schema:
+libs:
+
+tags:
+  - c
+  - js
+  - spi
+  - hw
+
+manifest_version: 2017-09-29
