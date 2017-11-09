@@ -51,11 +51,16 @@ filesystem:
 # config_schema:
 config_schema:
 #  - ["debug.level", 3]
+  - ["app", "o", {title: "App settings"}]
   - ["app.ccs811_enable", "b", false, {title: "CCS811 sensor enabled"}]
   - ["app.bme280_enable", "b", false, {title: "BME280 sensor enabled"}]
   - ["app.mpu_enable", "b", false, {title: "MPU sensor enabled"}]
   - ["app.lumen_enable", "b", false, {title: "TSL sensor enabled"}]
   - ["app.lumen_enable", "b", false, {title: "TSL sensor enabled"}]
+  - ["app.time_deepsleep", "i", 300000, {title: "Time spent in deep sleep in milliseconds"}]
+  - ["app.time_awake", "i", 45, {title: "Time spent awake in seconds"}]
+# GPIO pins
+  - ["app_gpio", "o", {title: "App GPIO pins"}]
   - ["app_gpio.powergood", "i", 34, {title: "Power good signal from buck converter, active low"}]
   - ["app_gpio.charge_stat", "i", 35, {title: "LiPo Charger status, L=charge, H=charge completed, HiZ=No battery"}]
   - ["app_gpio.adc_lipo", "i", 25, {title: "LiPo voltage through voltage divider resistors"}]
@@ -72,11 +77,12 @@ config_schema:
   - ["app_gpio.FET_1", "i", 2, {title: "FET drive ch1"}]
   - ["app_gpio.FET_2", "i", 4, {title: "FET drive ch2"}]
   - ["app_gpio.unused17", "i", 17, {title: "A free GPIO"}]
-  - ["spi.mosi", "i", 23, {title: "SPI MOSI pin"}]
-  - ["spi.miso", "i", 19, {title: "SPI MISO pin"}]
-  - ["spi.sck", "i", 18, {title: "SPI SCK pin"}]
-  - ["i2c.sda", "i", 21, {title: "SDA pin"}]
-  - ["i2c.sck", "i", 18, {title: "SCK pin"}]
+#  - ["spi.mosi", "i", 23, {title: "SPI MOSI pin"}]
+#  - ["spi.miso", "i", 19, {title: "SPI MISO pin"}]
+#  - ["spi.sck", "i", 18, {title: "SPI SCK pin"}]
+#  - ["i2c.sda", "i", 21, {title: "SDA pin"}]
+#  - ["i2c.sck", "i", 18, {title: "SCK pin"}]
+
 
 
 # List of libraries used by this app, in order of initialisation
@@ -94,6 +100,13 @@ libs:
   - origin: https://github.com/mongoose-os-libs/mjs
   - name: lobo-spi
   - name: lobo-tft
+  - name: deepsleep
+  - name: http-fetch
+
+build_vars:
+# ESP_IDF_SDKCONFIG_OPTS: "${build_vars.ESP_IDF_SDKCONFIG_OPTS} CONFIG_ESP32_RTC_CLOCK_SOURCE_INTERNAL_RC="
+# Keep this out
+# ESP_IDF_SDKCONFIG_OPTS: "${build_vars.ESP_IDF_SDKCONFIG_OPTS} CONFIG_ESP32_RTC_CLOCK_SOURCE_EXTERNAL_CRYSTAL=y"
 
 # Used by the mos tool to catch mos binaries incompatible with this file format
 manifest_version: 2017-05-18

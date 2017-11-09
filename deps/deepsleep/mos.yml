@@ -1,0 +1,26 @@
+author: peimis
+type: lib
+description: Deepsleep support
+version: 0.1
+
+platforms: [ esp32 ]
+
+sources:
+  - src
+  - src/${arch}
+includes:
+  - include
+
+build_vars:
+ ESP_IDF_SDKCONFIG_OPTS: "${build_vars.ESP_IDF_SDKCONFIG_OPTS} CONFIG_ESP32_DEEP_SLEEP_WAKEUP_DELAY=500"
+# ESP_IDF_SDKCONFIG_OPTS: "${build_vars.ESP_IDF_SDKCONFIG_OPTS} CONFIG_ESP32_RTC_CLOCK_SOURCE_EXTERNAL_CRYSTAL=y"
+#
+# ESP_IDF_SDKCONFIG_OPTS: "${build_vars.ESP_IDF_SDKCONFIG_OPTS} CONFIG_ESP32_RTC_CLOCK_SOURCE_INTERNAL_RC="
+
+tags:
+  - c
+  - js
+  - sleep
+  - core
+
+manifest_version: 2017-09-29

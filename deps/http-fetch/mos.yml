@@ -1,0 +1,21 @@
+author: peimis
+type: lib
+description: HTTP fetch
+version: 0.1
+
+platforms: [ esp32 ]
+
+sources:
+  - src
+includes:
+  - include
+
+build_vars:
+
+tags:
+  - c
+  - js
+  - sleep
+  - core
+
+manifest_version: 2017-09-29
