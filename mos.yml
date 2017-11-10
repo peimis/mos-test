@@ -61,6 +61,7 @@ config_schema:
   - ["app.time_awake", "i", 45, {title: "Time spent awake in seconds"}]
 # GPIO pins
   - ["app_gpio", "o", {title: "App GPIO pins"}]
+  - ["app_gpio.load_en", "i", 12, {title: "Enable peripheral power, active high"}]
   - ["app_gpio.powergood", "i", 34, {title: "Power good signal from buck converter, active low"}]
   - ["app_gpio.charge_stat", "i", 35, {title: "LiPo Charger status, L=charge, H=charge completed, HiZ=No battery"}]
   - ["app_gpio.adc_lipo", "i", 25, {title: "LiPo voltage through voltage divider resistors"}]
@@ -77,6 +78,7 @@ config_schema:
   - ["app_gpio.FET_1", "i", 2, {title: "FET drive ch1"}]
   - ["app_gpio.FET_2", "i", 4, {title: "FET drive ch2"}]
   - ["app_gpio.unused17", "i", 17, {title: "A free GPIO"}]
+  - ["app_gpio.button", "i", 0, {title: "Button, active low"}]
 #  - ["spi.mosi", "i", 23, {title: "SPI MOSI pin"}]
 #  - ["spi.miso", "i", 19, {title: "SPI MISO pin"}]
 #  - ["spi.sck", "i", 18, {title: "SPI SCK pin"}]
@@ -98,6 +100,8 @@ libs:
   - origin: https://github.com/mongoose-os-libs/rpc-common
   - origin: https://github.com/mongoose-os-libs/dns-sd
   - origin: https://github.com/mongoose-os-libs/mjs
+#  - origin: https://github.com/mongoose-os-libs/arduino-adafruit-bme280
+  - name: arduino-adafruit-bme280
   - name: lobo-spi
   - name: lobo-tft
   - name: deepsleep
