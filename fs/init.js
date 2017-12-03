@@ -4,7 +4,8 @@ load('api_timer.js');
 load('api_gpio.js');
 load('api_deepsleep.js');
 load('api_http.js');
-load('api_http_fetch.js');
+// load('api_http_fetch.js');
+load('api_wug_client.js');
 // load('api_pwm.js');
 // load('api_mqtt.js');
 
@@ -15,13 +16,14 @@ let RED_LED = Cfg.get('app_gpio.led_r');
 let GREEN_LED = Cfg.get('app_gpio.led_g');
 let BLUE_LED = Cfg.get('app_gpio.led_b');
 let deepsleep = Cfg.get('app.time_deepsleep');
-let awake = Cfg.get('app.time_awake');
+// let awake = Cfg.get('app.time_awake');
+let awake = 20;
 
 let bme_cs = Cfg.get('app_gpio.bme280_cs');
 let button = Cfg.get('app_gpio.button');
 let load_en = Cfg.get('app_gpio.load_en');
 let count = 0;
-let apikey = 'your-apikey-here';
+let apikey = 'a0291ba2d850ab86';
 
 
 //let features = 'conditions/forecast';
@@ -44,21 +46,30 @@ let bme_present = 0;
 
 GPIO.write(GREEN_LED, 1);
 GPIO.set_mode(GREEN_LED, GPIO.MODE_OUTPUT);
-GPIO.write(RED_LED, 1);
-GPIO.set_mode(RED_LED, GPIO.MODE_OUTPUT);
-
-GPIO.write(load_en, 1);
-GPIO.set_mode(load_en, GPIO.MODE_OUTPUT);
+// GPIO.write(RED_LED, 1);
+// GPIO.set_mode(RED_LED, GPIO.MODE_OUTPUT);
+// GPIO.write(load_en, 1);
+// GPIO.set_mode(load_en, GPIO.MODE_OUTPUT);
 
 // Publish to MQTT topic on a button press. Button is wired to GPIO pin 0
 GPIO.set_button_handler(0, GPIO.PULL_UP, GPIO.INT_EDGE_NEG, 200, function() {
-	let url = 'http://icons.wxug.com/i/c/k/cloudy.gif';
-
+//	let url = 'http://icons.wxug.com/i/c/k/cloudy.gif';
+	let url = 'http://api.wunderground.com/api/a0291ba2d850ab86/conditions/hourly/q/Finland/Nousiainen.json';
 	print('Make a fetch query: ', url);
 
-	HttpFetch.Get(url, 'cloudy.gif', function(status, code, bytes) {
-		print("stat:", status, "code:", code, "bytes", bytes);
+	Wug.getConditions(1, function(status, result, args) {
+		if (status === 200) {
+			let res = JSON.parse(result);
+			print("Got conditions status=", status, "res=", JSON.stringify(res));
+		} else {
+			print("Failed to get conditions");
+		}
 	}, null );
+
+//	HttpFetch.Get(url, 'jou', function(status, code, bytes) {
+//		print("HttpFetch Done");
+//	}, null );
+
 }, null);
 
 
@@ -83,33 +94,18 @@ GPIO.set_button_handler(17, GPIO.PULL_UP, GPIO.INT_EDGE_NEG, 200, function() {
 }, null);
 
 
-Timer.set(4800, 1, function() {
-	GPIO.write(RED_LED, 0);
-
-	Timer.set(40, 0, function() {
-		GPIO.write(RED_LED, 1);
-
-		Timer.set(300, 0, function() {
-			GPIO.write(RED_LED, 0);
-
-			Timer.set(40, 0, function() {
-				GPIO.write(RED_LED, 1);
-			}, null);
-		}, null);
-	}, null);
-}, null);
 
 // Primary loop run every 1 second
 //
-Timer.set(1750, 1, function() {
+Timer.set(1000, 1, function() {
 	let wakeups = DeepSleep.Count();
 	count = count + 1;
 	print('* wakeups:', wakeups, " count:", count);
 
-	GPIO.write(GREEN_LED, 0);
+	GPIO.write(GREEN_LED, 1);
 
 	Timer.set(50, 0, function() {
-		GPIO.write(GREEN_LED, 1);
+		GPIO.write(GREEN_LED, 0);
 	}, null);
 
 	if (bme_present === 1) {
@@ -126,7 +122,8 @@ Timer.set(1750, 1, function() {
 	if (count >= awake) {
 		print('Sleep now ', deepsleep);
 		GPIO.write(load_en, 0);
-		DeepSleep.SleepMs(deepsleep);
+		DeepSleep.SetWakeupMode(wakeups);
+		DeepSleep.SleepMs(5000);
 	}
 
 }, null);

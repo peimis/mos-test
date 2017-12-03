@@ -1,0 +1,389 @@
+{
+    "response": {
+        "version": "0.1", 
+        "uri": "http://api.wunderground.com/api/a0291ba2d850ab86/conditions/forecast/hourly/q/Finland/Nousiainen.json", 
+        "termsofService": "http://www.wunderground.com/weather/api/d/terms.html", 
+        "features": {
+            "forecast": 1
+        }
+    }, 
+    "forecast": {
+        "txt_forecast": {
+            "date": "11:53 AM EET", 
+            "forecastday": [
+                {
+                    "period": 0, 
+                    "icon": "partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+                    "title": "Friday", 
+                    "fcttext": "A mix of clouds and sun. High 44F. Winds SSW at 10 to 15 mph.", 
+                    "fcttext_metric": "Mainly cloudy. A few peeks of sunshine possible. High 7C. Winds SSW at 10 to 15 km/h.", 
+                    "pop": "10"
+                }, 
+                {
+                    "period": 1, 
+                    "icon": "nt_chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+                    "title": "Friday Night", 
+                    "fcttext": "Cloudy. Some light rain is likely. Low 38F. Winds SE at 10 to 15 mph. Chance of rain 70%.", 
+                    "fcttext_metric": "Cloudy. Some light rain is likely. Low 3C. Winds SE at 15 to 25 km/h. Chance of rain 70%.", 
+                    "pop": "70"
+                }, 
+                {
+                    "period": 2, 
+                    "icon": "rain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/rain.gif", 
+                    "title": "Saturday", 
+                    "fcttext": "Cloudy with periods of rain. High 41F. Winds ESE at 10 to 15 mph. Chance of rain 90%. Rainfall near a quarter of an inch.", 
+                    "fcttext_metric": "Rain likely. High near 5C. Winds ESE at 15 to 25 km/h. Chance of rain 90%. Rainfall near 6mm.", 
+                    "pop": "90"
+                }, 
+                {
+                    "period": 3, 
+                    "icon": "nt_chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+                    "title": "Saturday Night", 
+                    "fcttext": "Cloudy with occasional rain showers. Low 33F. Winds SE at 5 to 10 mph. Chance of rain 40%.", 
+                    "fcttext_metric": "Considerable cloudiness with occasional rain showers. Low near 0C. Winds light and variable. Chance of rain 40%.", 
+                    "pop": "40"
+                }, 
+                {
+                    "period": 4, 
+                    "icon": "chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+                    "title": "Sunday", 
+                    "fcttext": "Considerable cloudiness with occasional rain showers. High near 40F. Winds WSW at 10 to 15 mph. Chance of rain 40%.", 
+                    "fcttext_metric": "Cloudy with occasional rain showers. High 4C. Winds WSW at 15 to 25 km/h. Chance of rain 50%.", 
+                    "pop": "40"
+                }, 
+                {
+                    "period": 5, 
+                    "icon": "nt_chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+                    "title": "Sunday Night", 
+                    "fcttext": "Rain showers early with mostly cloudy conditions late. Low 32F. Winds W at 5 to 10 mph. Chance of rain 40%.", 
+                    "fcttext_metric": "Showers in the evening with some clearing overnight. Low around 0C. Winds W at 10 to 15 km/h. Chance of rain 40%.", 
+                    "pop": "40"
+                }, 
+                {
+                    "period": 6, 
+                    "icon": "partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+                    "title": "Monday", 
+                    "fcttext": "Sunshine and clouds mixed. High 39F. Winds light and variable.", 
+                    "fcttext_metric": "Partly cloudy. High 3C. Winds light and variable.", 
+                    "pop": "20"
+                }, 
+                {
+                    "period": 7, 
+                    "icon": "nt_partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif", 
+                    "title": "Monday Night", 
+                    "fcttext": "Partly cloudy. Low near 30F. Winds light and variable.", 
+                    "fcttext_metric": "A few clouds from time to time. Low -1C. Winds light and variable.", 
+                    "pop": "20"
+                }
+            ]
+        }, 
+        "simpleforecast": {
+            "forecastday": [
+                {
+                    "date": {
+                        "epoch": "1510333200", 
+                        "pretty": "7:00 PM EET on November 10, 2017", 
+                        "day": 10, 
+                        "month": 11, 
+                        "year": 2017, 
+                        "yday": 313, 
+                        "hour": 19, 
+                        "min": "00", 
+                        "sec": 0, 
+                        "isdst": "0", 
+                        "monthname": "November", 
+                        "monthname_short": "Nov", 
+                        "weekday_short": "Fri", 
+                        "weekday": "Friday", 
+                        "ampm": "PM", 
+                        "tz_short": "EET", 
+                        "tz_long": "Europe/Helsinki"
+                    }, 
+                    "period": 1, 
+                    "high": {
+                        "fahrenheit": "44", 
+                        "celsius": "7"
+                    }, 
+                    "low": {
+                        "fahrenheit": "38", 
+                        "celsius": "3"
+                    }, 
+                    "conditions": "Partly Cloudy", 
+                    "icon": "partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+                    "skyicon": "", 
+                    "pop": 10, 
+                    "qpf_allday": {
+                        "in": 0.09, 
+                        "mm": 2
+                    }, 
+                    "qpf_day": {
+                        "in": 0, 
+                        "mm": 0
+                    }, 
+                    "qpf_night": {
+                        "in": 0.09, 
+                        "mm": 2
+                    }, 
+                    "snow_allday": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_day": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_night": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "maxwind": {
+                        "mph": 15, 
+                        "kph": 24, 
+                        "dir": "SSW", 
+                        "degrees": 207
+                    }, 
+                    "avewind": {
+                        "mph": 11, 
+                        "kph": 18, 
+                        "dir": "SSW", 
+                        "degrees": 207
+                    }, 
+                    "avehumidity": 84, 
+                    "maxhumidity": 95, 
+                    "minhumidity": 74
+                }, 
+                {
+                    "date": {
+                        "epoch": "1510419600", 
+                        "pretty": "7:00 PM EET on November 11, 2017", 
+                        "day": 11, 
+                        "month": 11, 
+                        "year": 2017, 
+                        "yday": 314, 
+                        "hour": 19, 
+                        "min": "00", 
+                        "sec": 0, 
+                        "isdst": "0", 
+                        "monthname": "November", 
+                        "monthname_short": "Nov", 
+                        "weekday_short": "Sat", 
+                        "weekday": "Saturday", 
+                        "ampm": "PM", 
+                        "tz_short": "EET", 
+                        "tz_long": "Europe/Helsinki"
+                    }, 
+                    "period": 2, 
+                    "high": {
+                        "fahrenheit": "41", 
+                        "celsius": "5"
+                    }, 
+                    "low": {
+                        "fahrenheit": "33", 
+                        "celsius": "1"
+                    }, 
+                    "conditions": "Rain", 
+                    "icon": "rain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/rain.gif", 
+                    "skyicon": "", 
+                    "pop": 90, 
+                    "qpf_allday": {
+                        "in": 0.27, 
+                        "mm": 7
+                    }, 
+                    "qpf_day": {
+                        "in": 0.2, 
+                        "mm": 5
+                    }, 
+                    "qpf_night": {
+                        "in": 0.07, 
+                        "mm": 2
+                    }, 
+                    "snow_allday": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_day": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_night": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "maxwind": {
+                        "mph": 15, 
+                        "kph": 24, 
+                        "dir": "ESE", 
+                        "degrees": 119
+                    }, 
+                    "avewind": {
+                        "mph": 10, 
+                        "kph": 16, 
+                        "dir": "ESE", 
+                        "degrees": 119
+                    }, 
+                    "avehumidity": 95, 
+                    "maxhumidity": 100, 
+                    "minhumidity": 89
+                }, 
+                {
+                    "date": {
+                        "epoch": "1510506000", 
+                        "pretty": "7:00 PM EET on November 12, 2017", 
+                        "day": 12, 
+                        "month": 11, 
+                        "year": 2017, 
+                        "yday": 315, 
+                        "hour": 19, 
+                        "min": "00", 
+                        "sec": 0, 
+                        "isdst": "0", 
+                        "monthname": "November", 
+                        "monthname_short": "Nov", 
+                        "weekday_short": "Sun", 
+                        "weekday": "Sunday", 
+                        "ampm": "PM", 
+                        "tz_short": "EET", 
+                        "tz_long": "Europe/Helsinki"
+                    }, 
+                    "period": 3, 
+                    "high": {
+                        "fahrenheit": "40", 
+                        "celsius": "4"
+                    }, 
+                    "low": {
+                        "fahrenheit": "32", 
+                        "celsius": "0"
+                    }, 
+                    "conditions": "Chance of Rain", 
+                    "icon": "chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+                    "skyicon": "", 
+                    "pop": 40, 
+                    "qpf_allday": {
+                        "in": 0.06, 
+                        "mm": 2
+                    }, 
+                    "qpf_day": {
+                        "in": 0.05, 
+                        "mm": 1
+                    }, 
+                    "qpf_night": {
+                        "in": 0.02, 
+                        "mm": 1
+                    }, 
+                    "snow_allday": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_day": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_night": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "maxwind": {
+                        "mph": 15, 
+                        "kph": 24, 
+                        "dir": "WSW", 
+                        "degrees": 252
+                    }, 
+                    "avewind": {
+                        "mph": 10, 
+                        "kph": 16, 
+                        "dir": "WSW", 
+                        "degrees": 252
+                    }, 
+                    "avehumidity": 95, 
+                    "maxhumidity": 100, 
+                    "minhumidity": 87
+                }, 
+                {
+                    "date": {
+                        "epoch": "1510592400", 
+                        "pretty": "7:00 PM EET on November 13, 2017", 
+                        "day": 13, 
+                        "month": 11, 
+                        "year": 2017, 
+                        "yday": 316, 
+                        "hour": 19, 
+                        "min": "00", 
+                        "sec": 0, 
+                        "isdst": "0", 
+                        "monthname": "November", 
+                        "monthname_short": "Nov", 
+                        "weekday_short": "Mon", 
+                        "weekday": "Monday", 
+                        "ampm": "PM", 
+                        "tz_short": "EET", 
+                        "tz_long": "Europe/Helsinki"
+                    }, 
+                    "period": 4, 
+                    "high": {
+                        "fahrenheit": "39", 
+                        "celsius": "4"
+                    }, 
+                    "low": {
+                        "fahrenheit": "30", 
+                        "celsius": "-1"
+                    }, 
+                    "conditions": "Partly Cloudy", 
+                    "icon": "partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+                    "skyicon": "", 
+                    "pop": 20, 
+                    "qpf_allday": {
+                        "in": 0, 
+                        "mm": 0
+                    }, 
+                    "qpf_day": {
+                        "in": 0, 
+                        "mm": 0
+                    }, 
+                    "qpf_night": {
+                        "in": 0, 
+                        "mm": 0
+                    }, 
+                    "snow_allday": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_day": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_night": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "maxwind": {
+                        "mph": 5, 
+                        "kph": 8, 
+                        "dir": "WNW", 
+                        "degrees": 290
+                    }, 
+                    "avewind": {
+                        "mph": 4, 
+                        "kph": 6, 
+                        "dir": "WNW", 
+                        "degrees": 290
+                    }, 
+                    "avehumidity": 94, 
+                    "maxhumidity": 98, 
+                    "minhumidity": 86
+                }
+            ]
+        }
+    } 
+}

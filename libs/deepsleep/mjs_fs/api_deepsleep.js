@@ -13,6 +13,7 @@ let DeepSleep = {
   // Remember to set the deep sleep wakeup stubs.
   EnableGpioWakeup: ffi('bool mgos_deepsleep_enable_gpio_wakeup(int)'),
   SleepMs: ffi('bool mgos_deepsleep_ms(int)'),
+  SetWakeupMode: ffi('void mgos_deepsleep_set_wakeup_mode(int)'),
   SleepNow: ffi('bool mgos_deepsleep_now(int)'),
   Count: ffi('int mgos_deepsleep_count()'),
 };

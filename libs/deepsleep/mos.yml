@@ -8,6 +8,7 @@ platforms: [ esp32 ]
 sources:
   - src
   - src/${arch}
+
 includes:
   - include
 

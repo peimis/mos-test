@@ -84,6 +84,10 @@ config_schema:
 #  - ["spi.sck", "i", 18, {title: "SPI SCK pin"}]
 #  - ["i2c.sda", "i", 21, {title: "SDA pin"}]
 #  - ["i2c.sck", "i", 18, {title: "SCK pin"}]
+  - ["wifi.sta.ssid", "s", "Verkko", {title: "SCK pin"}]
+  - ["wifi.sta.pass", "s", "Kotital0", {title: "SCK pin"}]
+  - ["wifi.sta.enable", "b", true, {title: "Enable wifi STA"}]
+  - ["wifi.ap.enable", "b", false, {title: "Enable wifi AP"}]
 
 
 
@@ -102,10 +106,12 @@ libs:
   - origin: https://github.com/mongoose-os-libs/mjs
 #  - origin: https://github.com/mongoose-os-libs/arduino-adafruit-bme280
   - name: arduino-adafruit-bme280
+  - origin: libs/deepsleep
+  - origin: libs/http-fetch
+  - origin: libs/json-streaming-parser
+  - origin: libs/wug-client
   - name: lobo-spi
   - name: lobo-tft
-  - name: deepsleep
-  - name: http-fetch
 
 build_vars:
 # ESP_IDF_SDKCONFIG_OPTS: "${build_vars.ESP_IDF_SDKCONFIG_OPTS} CONFIG_ESP32_RTC_CLOCK_SOURCE_INTERNAL_RC="

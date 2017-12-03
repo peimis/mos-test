@@ -1,0 +1,3357 @@
+{
+    "response": {
+        "version": "0.1", 
+        "uri": "http://api.wunderground.com/api/a0291ba2d850ab86/conditions/forecast/hourly/q/Finland/Nousiainen.json", 
+        "termsofService": "http://www.wunderground.com/weather/api/d/terms.html", 
+        "features": {
+            "conditions": 1, 
+            "forecast": 1, 
+            "hourly": 1
+        }
+    }, 
+    "current_observation": {
+        "image": {
+            "url": "http://icons.wxug.com/graphics/wu2/logo_130x80.png", 
+            "title": "Weather Underground", 
+            "link": "http://www.wunderground.com"
+        }, 
+        "display_location": {
+            "full": "Nousiainen, Finland", 
+            "city": "Nousiainen", 
+            "state": "", 
+            "state_name": "Finland", 
+            "country": "FI", 
+            "country_iso3166": "FI", 
+            "zip": "00000", 
+            "magic": "46", 
+            "wmo": "02972", 
+            "latitude": "60.59999847", 
+            "longitude": "22.07999992", 
+            "elevation": "17.1"
+        }, 
+        "observation_location": {
+            "full": "Mynämäki, Mynämäki, ", 
+            "city": "Mynämäki, Mynämäki", 
+            "state": "", 
+            "country": "FI", 
+            "country_iso3166": "FI", 
+            "latitude": "60.626450", 
+            "longitude": "21.918564", 
+            "elevation": "0 ft"
+        }, 
+        "estimated": {}, 
+        "station_id": "IMYNMKI5", 
+        "observation_time": "Last Updated on November 10, 12:38 PM EET", 
+        "observation_time_rfc822": "Fri, 10 Nov 2017 12:38:50 +0200", 
+        "observation_epoch": "1510310330", 
+        "local_time_rfc822": "Fri, 10 Nov 2017 12:44:52 +0200", 
+        "local_epoch": "1510310692", 
+        "local_tz_short": "EET", 
+        "local_tz_long": "Europe/Helsinki", 
+        "local_tz_offset": "+0200", 
+        "weather": "Partly Cloudy", 
+        "temperature_string": "42.4 F (5.8 C)", 
+        "temp_f": 42.4, 
+        "temp_c": 5.8, 
+        "relative_humidity": "87%", 
+        "wind_string": "From the SW at 8.1 MPH Gusting to 13.0 MPH", 
+        "wind_dir": "SW", 
+        "wind_degrees": 220, 
+        "wind_mph": 8.1, 
+        "wind_gust_mph": "13.0", 
+        "wind_kph": 13, 
+        "wind_gust_kph": "20.9", 
+        "pressure_mb": "998", 
+        "pressure_in": "29.47", 
+        "pressure_trend": "0", 
+        "dewpoint_string": "39 F (4 C)", 
+        "dewpoint_f": 39, 
+        "dewpoint_c": 4, 
+        "heat_index_string": "NA", 
+        "heat_index_f": "NA", 
+        "heat_index_c": "NA", 
+        "windchill_string": "37 F (3 C)", 
+        "windchill_f": "37", 
+        "windchill_c": "3", 
+        "feelslike_string": "37 F (3 C)", 
+        "feelslike_f": "37", 
+        "feelslike_c": "3", 
+        "visibility_mi": "6.2", 
+        "visibility_km": "10.0", 
+        "solarradiation": "--", 
+        "UV": "0", 
+        "precip_1hr_string": "-999.00 in ( 0 mm)", 
+        "precip_1hr_in": "-999.00", 
+        "precip_1hr_metric": " 0", 
+        "precip_today_string": "0.00 in (0 mm)", 
+        "precip_today_in": "0.00", 
+        "precip_today_metric": "0", 
+        "icon": "partlycloudy", 
+        "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+        "forecast_url": "http://www.wunderground.com/global/stations/02972.html", 
+        "history_url": "http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=IMYNMKI5", 
+        "ob_url": "http://www.wunderground.com/cgi-bin/findweather/getForecast?query=60.626450,21.918564", 
+        "nowcast": ""
+    }, 
+    "forecast": {
+        "txt_forecast": {
+            "date": "11:53 AM EET", 
+            "forecastday": [
+                {
+                    "period": 0, 
+                    "icon": "partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+                    "title": "Friday", 
+                    "fcttext": "A mix of clouds and sun. High 44F. Winds SSW at 10 to 15 mph.", 
+                    "fcttext_metric": "Mainly cloudy. A few peeks of sunshine possible. High 7C. Winds SSW at 10 to 15 km/h.", 
+                    "pop": "10"
+                }, 
+                {
+                    "period": 1, 
+                    "icon": "nt_chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+                    "title": "Friday Night", 
+                    "fcttext": "Cloudy. Some light rain is likely. Low 38F. Winds SE at 10 to 15 mph. Chance of rain 70%.", 
+                    "fcttext_metric": "Cloudy. Some light rain is likely. Low 3C. Winds SE at 15 to 25 km/h. Chance of rain 70%.", 
+                    "pop": "70"
+                }, 
+                {
+                    "period": 2, 
+                    "icon": "rain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/rain.gif", 
+                    "title": "Saturday", 
+                    "fcttext": "Cloudy with periods of rain. High 41F. Winds ESE at 10 to 15 mph. Chance of rain 90%. Rainfall near a quarter of an inch.", 
+                    "fcttext_metric": "Rain likely. High near 5C. Winds ESE at 15 to 25 km/h. Chance of rain 90%. Rainfall near 6mm.", 
+                    "pop": "90"
+                }, 
+                {
+                    "period": 3, 
+                    "icon": "nt_chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+                    "title": "Saturday Night", 
+                    "fcttext": "Cloudy with occasional rain showers. Low 33F. Winds SE at 5 to 10 mph. Chance of rain 40%.", 
+                    "fcttext_metric": "Considerable cloudiness with occasional rain showers. Low near 0C. Winds light and variable. Chance of rain 40%.", 
+                    "pop": "40"
+                }, 
+                {
+                    "period": 4, 
+                    "icon": "chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+                    "title": "Sunday", 
+                    "fcttext": "Considerable cloudiness with occasional rain showers. High near 40F. Winds WSW at 10 to 15 mph. Chance of rain 40%.", 
+                    "fcttext_metric": "Cloudy with occasional rain showers. High 4C. Winds WSW at 15 to 25 km/h. Chance of rain 50%.", 
+                    "pop": "40"
+                }, 
+                {
+                    "period": 5, 
+                    "icon": "nt_chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+                    "title": "Sunday Night", 
+                    "fcttext": "Rain showers early with mostly cloudy conditions late. Low 32F. Winds W at 5 to 10 mph. Chance of rain 40%.", 
+                    "fcttext_metric": "Showers in the evening with some clearing overnight. Low around 0C. Winds W at 10 to 15 km/h. Chance of rain 40%.", 
+                    "pop": "40"
+                }, 
+                {
+                    "period": 6, 
+                    "icon": "partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+                    "title": "Monday", 
+                    "fcttext": "Sunshine and clouds mixed. High 39F. Winds light and variable.", 
+                    "fcttext_metric": "Partly cloudy. High 3C. Winds light and variable.", 
+                    "pop": "20"
+                }, 
+                {
+                    "period": 7, 
+                    "icon": "nt_partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/nt_partlycloudy.gif", 
+                    "title": "Monday Night", 
+                    "fcttext": "Partly cloudy. Low near 30F. Winds light and variable.", 
+                    "fcttext_metric": "A few clouds from time to time. Low -1C. Winds light and variable.", 
+                    "pop": "20"
+                }
+            ]
+        }, 
+        "simpleforecast": {
+            "forecastday": [
+                {
+                    "date": {
+                        "epoch": "1510333200", 
+                        "pretty": "7:00 PM EET on November 10, 2017", 
+                        "day": 10, 
+                        "month": 11, 
+                        "year": 2017, 
+                        "yday": 313, 
+                        "hour": 19, 
+                        "min": "00", 
+                        "sec": 0, 
+                        "isdst": "0", 
+                        "monthname": "November", 
+                        "monthname_short": "Nov", 
+                        "weekday_short": "Fri", 
+                        "weekday": "Friday", 
+                        "ampm": "PM", 
+                        "tz_short": "EET", 
+                        "tz_long": "Europe/Helsinki"
+                    }, 
+                    "period": 1, 
+                    "high": {
+                        "fahrenheit": "44", 
+                        "celsius": "7"
+                    }, 
+                    "low": {
+                        "fahrenheit": "38", 
+                        "celsius": "3"
+                    }, 
+                    "conditions": "Partly Cloudy", 
+                    "icon": "partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+                    "skyicon": "", 
+                    "pop": 10, 
+                    "qpf_allday": {
+                        "in": 0.09, 
+                        "mm": 2
+                    }, 
+                    "qpf_day": {
+                        "in": 0, 
+                        "mm": 0
+                    }, 
+                    "qpf_night": {
+                        "in": 0.09, 
+                        "mm": 2
+                    }, 
+                    "snow_allday": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_day": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_night": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "maxwind": {
+                        "mph": 15, 
+                        "kph": 24, 
+                        "dir": "SSW", 
+                        "degrees": 207
+                    }, 
+                    "avewind": {
+                        "mph": 11, 
+                        "kph": 18, 
+                        "dir": "SSW", 
+                        "degrees": 207
+                    }, 
+                    "avehumidity": 84, 
+                    "maxhumidity": 95, 
+                    "minhumidity": 74
+                }, 
+                {
+                    "date": {
+                        "epoch": "1510419600", 
+                        "pretty": "7:00 PM EET on November 11, 2017", 
+                        "day": 11, 
+                        "month": 11, 
+                        "year": 2017, 
+                        "yday": 314, 
+                        "hour": 19, 
+                        "min": "00", 
+                        "sec": 0, 
+                        "isdst": "0", 
+                        "monthname": "November", 
+                        "monthname_short": "Nov", 
+                        "weekday_short": "Sat", 
+                        "weekday": "Saturday", 
+                        "ampm": "PM", 
+                        "tz_short": "EET", 
+                        "tz_long": "Europe/Helsinki"
+                    }, 
+                    "period": 2, 
+                    "high": {
+                        "fahrenheit": "41", 
+                        "celsius": "5"
+                    }, 
+                    "low": {
+                        "fahrenheit": "33", 
+                        "celsius": "1"
+                    }, 
+                    "conditions": "Rain", 
+                    "icon": "rain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/rain.gif", 
+                    "skyicon": "", 
+                    "pop": 90, 
+                    "qpf_allday": {
+                        "in": 0.27, 
+                        "mm": 7
+                    }, 
+                    "qpf_day": {
+                        "in": 0.2, 
+                        "mm": 5
+                    }, 
+                    "qpf_night": {
+                        "in": 0.07, 
+                        "mm": 2
+                    }, 
+                    "snow_allday": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_day": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_night": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "maxwind": {
+                        "mph": 15, 
+                        "kph": 24, 
+                        "dir": "ESE", 
+                        "degrees": 119
+                    }, 
+                    "avewind": {
+                        "mph": 10, 
+                        "kph": 16, 
+                        "dir": "ESE", 
+                        "degrees": 119
+                    }, 
+                    "avehumidity": 95, 
+                    "maxhumidity": 100, 
+                    "minhumidity": 89
+                }, 
+                {
+                    "date": {
+                        "epoch": "1510506000", 
+                        "pretty": "7:00 PM EET on November 12, 2017", 
+                        "day": 12, 
+                        "month": 11, 
+                        "year": 2017, 
+                        "yday": 315, 
+                        "hour": 19, 
+                        "min": "00", 
+                        "sec": 0, 
+                        "isdst": "0", 
+                        "monthname": "November", 
+                        "monthname_short": "Nov", 
+                        "weekday_short": "Sun", 
+                        "weekday": "Sunday", 
+                        "ampm": "PM", 
+                        "tz_short": "EET", 
+                        "tz_long": "Europe/Helsinki"
+                    }, 
+                    "period": 3, 
+                    "high": {
+                        "fahrenheit": "40", 
+                        "celsius": "4"
+                    }, 
+                    "low": {
+                        "fahrenheit": "32", 
+                        "celsius": "0"
+                    }, 
+                    "conditions": "Chance of Rain", 
+                    "icon": "chancerain", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+                    "skyicon": "", 
+                    "pop": 40, 
+                    "qpf_allday": {
+                        "in": 0.06, 
+                        "mm": 2
+                    }, 
+                    "qpf_day": {
+                        "in": 0.05, 
+                        "mm": 1
+                    }, 
+                    "qpf_night": {
+                        "in": 0.02, 
+                        "mm": 1
+                    }, 
+                    "snow_allday": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_day": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_night": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "maxwind": {
+                        "mph": 15, 
+                        "kph": 24, 
+                        "dir": "WSW", 
+                        "degrees": 252
+                    }, 
+                    "avewind": {
+                        "mph": 10, 
+                        "kph": 16, 
+                        "dir": "WSW", 
+                        "degrees": 252
+                    }, 
+                    "avehumidity": 95, 
+                    "maxhumidity": 100, 
+                    "minhumidity": 87
+                }, 
+                {
+                    "date": {
+                        "epoch": "1510592400", 
+                        "pretty": "7:00 PM EET on November 13, 2017", 
+                        "day": 13, 
+                        "month": 11, 
+                        "year": 2017, 
+                        "yday": 316, 
+                        "hour": 19, 
+                        "min": "00", 
+                        "sec": 0, 
+                        "isdst": "0", 
+                        "monthname": "November", 
+                        "monthname_short": "Nov", 
+                        "weekday_short": "Mon", 
+                        "weekday": "Monday", 
+                        "ampm": "PM", 
+                        "tz_short": "EET", 
+                        "tz_long": "Europe/Helsinki"
+                    }, 
+                    "period": 4, 
+                    "high": {
+                        "fahrenheit": "39", 
+                        "celsius": "4"
+                    }, 
+                    "low": {
+                        "fahrenheit": "30", 
+                        "celsius": "-1"
+                    }, 
+                    "conditions": "Partly Cloudy", 
+                    "icon": "partlycloudy", 
+                    "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+                    "skyicon": "", 
+                    "pop": 20, 
+                    "qpf_allday": {
+                        "in": 0, 
+                        "mm": 0
+                    }, 
+                    "qpf_day": {
+                        "in": 0, 
+                        "mm": 0
+                    }, 
+                    "qpf_night": {
+                        "in": 0, 
+                        "mm": 0
+                    }, 
+                    "snow_allday": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_day": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "snow_night": {
+                        "in": 0, 
+                        "cm": 0
+                    }, 
+                    "maxwind": {
+                        "mph": 5, 
+                        "kph": 8, 
+                        "dir": "WNW", 
+                        "degrees": 290
+                    }, 
+                    "avewind": {
+                        "mph": 4, 
+                        "kph": 6, 
+                        "dir": "WNW", 
+                        "degrees": 290
+                    }, 
+                    "avehumidity": 94, 
+                    "maxhumidity": 98, 
+                    "minhumidity": 86
+                }
+            ]
+        }
+    }, 
+    "hourly_forecast": [
+        {
+            "FCTTIME": {
+                "hour": "13", 
+                "hour_padded": "13", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510311600", 
+                "pretty": "1:00 PM EET on November 10, 2017", 
+                "civil": "1:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "44", 
+                "metric": "7"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Partly Cloudy", 
+            "icon": "partlycloudy", 
+            "icon_url": "http://icons.wxug.com/i/c/k/partlycloudy.gif", 
+            "fctcode": "2", 
+            "sky": "55", 
+            "wspd": {
+                "english": "11", 
+                "metric": "18"
+            }, 
+            "wdir": {
+                "dir": "SW", 
+                "degrees": "222"
+            }, 
+            "wx": "Partly Cloudy", 
+            "uvi": "0", 
+            "humidity": "76", 
+            "windchill": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "0", 
+            "mslp": {
+                "english": "29.47", 
+                "metric": "998"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "14", 
+                "hour_padded": "14", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510315200", 
+                "pretty": "2:00 PM EET on November 10, 2017", 
+                "civil": "2:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "44", 
+                "metric": "7"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Mostly Cloudy", 
+            "icon": "mostlycloudy", 
+            "icon_url": "http://icons.wxug.com/i/c/k/mostlycloudy.gif", 
+            "fctcode": "3", 
+            "sky": "60", 
+            "wspd": {
+                "english": "10", 
+                "metric": "16"
+            }, 
+            "wdir": {
+                "dir": "SW", 
+                "degrees": "215"
+            }, 
+            "wx": "Mostly Cloudy", 
+            "uvi": "0", 
+            "humidity": "74", 
+            "windchill": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "0", 
+            "mslp": {
+                "english": "29.46", 
+                "metric": "998"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "15", 
+                "hour_padded": "15", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510318800", 
+                "pretty": "3:00 PM EET on November 10, 2017", 
+                "civil": "3:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "43", 
+                "metric": "6"
+            }, 
+            "dewpoint": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "condition": "Mostly Cloudy", 
+            "icon": "mostlycloudy", 
+            "icon_url": "http://icons.wxug.com/i/c/k/mostlycloudy.gif", 
+            "fctcode": "3", 
+            "sky": "69", 
+            "wspd": {
+                "english": "9", 
+                "metric": "14"
+            }, 
+            "wdir": {
+                "dir": "SSW", 
+                "degrees": "208"
+            }, 
+            "wx": "Mostly Cloudy", 
+            "uvi": "0", 
+            "humidity": "76", 
+            "windchill": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "0", 
+            "mslp": {
+                "english": "29.45", 
+                "metric": "997"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "16", 
+                "hour_padded": "16", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510322400", 
+                "pretty": "4:00 PM EET on November 10, 2017", 
+                "civil": "4:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "42", 
+                "metric": "6"
+            }, 
+            "dewpoint": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "condition": "Overcast", 
+            "icon": "cloudy", 
+            "icon_url": "http://icons.wxug.com/i/c/k/cloudy.gif", 
+            "fctcode": "4", 
+            "sky": "83", 
+            "wspd": {
+                "english": "9", 
+                "metric": "14"
+            }, 
+            "wdir": {
+                "dir": "SSW", 
+                "degrees": "200"
+            }, 
+            "wx": "Cloudy", 
+            "uvi": "0", 
+            "humidity": "79", 
+            "windchill": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "0", 
+            "mslp": {
+                "english": "29.45", 
+                "metric": "997"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "17", 
+                "hour_padded": "17", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510326000", 
+                "pretty": "5:00 PM EET on November 10, 2017", 
+                "civil": "5:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "41", 
+                "metric": "5"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Mostly Cloudy", 
+            "icon": "mostlycloudy", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif", 
+            "fctcode": "3", 
+            "sky": "73", 
+            "wspd": {
+                "english": "7", 
+                "metric": "11"
+            }, 
+            "wdir": {
+                "dir": "SSW", 
+                "degrees": "200"
+            }, 
+            "wx": "Mostly Cloudy", 
+            "uvi": "0", 
+            "humidity": "84", 
+            "windchill": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "1", 
+            "mslp": {
+                "english": "29.45", 
+                "metric": "997"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "18", 
+                "hour_padded": "18", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510329600", 
+                "pretty": "6:00 PM EET on November 10, 2017", 
+                "civil": "6:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "41", 
+                "metric": "5"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Mostly Cloudy", 
+            "icon": "mostlycloudy", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif", 
+            "fctcode": "3", 
+            "sky": "73", 
+            "wspd": {
+                "english": "7", 
+                "metric": "11"
+            }, 
+            "wdir": {
+                "dir": "SSW", 
+                "degrees": "193"
+            }, 
+            "wx": "Mostly Cloudy", 
+            "uvi": "0", 
+            "humidity": "86", 
+            "windchill": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "5", 
+            "mslp": {
+                "english": "29.44", 
+                "metric": "997"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "19", 
+                "hour_padded": "19", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510333200", 
+                "pretty": "7:00 PM EET on November 10, 2017", 
+                "civil": "7:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "41", 
+                "metric": "5"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Mostly Cloudy", 
+            "icon": "mostlycloudy", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif", 
+            "fctcode": "3", 
+            "sky": "68", 
+            "wspd": {
+                "english": "5", 
+                "metric": "8"
+            }, 
+            "wdir": {
+                "dir": "S", 
+                "degrees": "175"
+            }, 
+            "wx": "Mostly Cloudy", 
+            "uvi": "0", 
+            "humidity": "87", 
+            "windchill": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "19", 
+            "mslp": {
+                "english": "29.43", 
+                "metric": "997"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "20", 
+                "hour_padded": "20", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510336800", 
+                "pretty": "8:00 PM EET on November 10, 2017", 
+                "civil": "8:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Mostly Cloudy", 
+            "icon": "mostlycloudy", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif", 
+            "fctcode": "3", 
+            "sky": "68", 
+            "wspd": {
+                "english": "4", 
+                "metric": "6"
+            }, 
+            "wdir": {
+                "dir": "SSE", 
+                "degrees": "165"
+            }, 
+            "wx": "Mostly Cloudy", 
+            "uvi": "0", 
+            "humidity": "89", 
+            "windchill": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "24", 
+            "mslp": {
+                "english": "29.42", 
+                "metric": "996"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "21", 
+                "hour_padded": "21", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510340400", 
+                "pretty": "9:00 PM EET on November 10, 2017", 
+                "civil": "9:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "41", 
+                "metric": "5"
+            }, 
+            "dewpoint": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "condition": "Mostly Cloudy", 
+            "icon": "mostlycloudy", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_mostlycloudy.gif", 
+            "fctcode": "3", 
+            "sky": "71", 
+            "wspd": {
+                "english": "5", 
+                "metric": "8"
+            }, 
+            "wdir": {
+                "dir": "SSE", 
+                "degrees": "166"
+            }, 
+            "wx": "Mostly Cloudy", 
+            "uvi": "0", 
+            "humidity": "89", 
+            "windchill": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "24", 
+            "mslp": {
+                "english": "29.41", 
+                "metric": "996"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "22", 
+                "hour_padded": "22", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510344000", 
+                "pretty": "10:00 PM EET on November 10, 2017", 
+                "civil": "10:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "41", 
+                "metric": "5"
+            }, 
+            "dewpoint": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "92", 
+            "wspd": {
+                "english": "5", 
+                "metric": "8"
+            }, 
+            "wdir": {
+                "dir": "SSE", 
+                "degrees": "158"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "90", 
+            "windchill": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "35", 
+            "mslp": {
+                "english": "29.39", 
+                "metric": "995"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "23", 
+                "hour_padded": "23", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "10", 
+                "mday_padded": "10", 
+                "yday": "313", 
+                "isdst": "0", 
+                "epoch": "1510347600", 
+                "pretty": "11:00 PM EET on November 10, 2017", 
+                "civil": "11:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Friday", 
+                "weekday_name_night": "Friday Night", 
+                "weekday_name_abbrev": "Fri", 
+                "weekday_name_unlang": "Friday", 
+                "weekday_name_night_unlang": "Friday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "91", 
+            "wspd": {
+                "english": "6", 
+                "metric": "10"
+            }, 
+            "wdir": {
+                "dir": "SSE", 
+                "degrees": "149"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "95", 
+            "windchill": {
+                "english": "35", 
+                "metric": "2"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "35", 
+                "metric": "2"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "40", 
+            "mslp": {
+                "english": "29.37", 
+                "metric": "995"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "0", 
+                "hour_padded": "00", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510351200", 
+                "pretty": "12:00 AM EET on November 11, 2017", 
+                "civil": "12:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "94", 
+            "wspd": {
+                "english": "7", 
+                "metric": "11"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "138"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "94", 
+            "windchill": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "44", 
+            "mslp": {
+                "english": "29.35", 
+                "metric": "994"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "1", 
+                "hour_padded": "01", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510354800", 
+                "pretty": "1:00 AM EET on November 11, 2017", 
+                "civil": "1:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "96", 
+            "wspd": {
+                "english": "7", 
+                "metric": "11"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "129"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "93", 
+            "windchill": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "57", 
+            "mslp": {
+                "english": "29.34", 
+                "metric": "994"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "2", 
+                "hour_padded": "02", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510358400", 
+                "pretty": "2:00 AM EET on November 11, 2017", 
+                "civil": "2:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "96", 
+            "wspd": {
+                "english": "7", 
+                "metric": "11"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "130"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "95", 
+            "windchill": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "39", 
+            "mslp": {
+                "english": "29.31", 
+                "metric": "993"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "3", 
+                "hour_padded": "03", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510362000", 
+                "pretty": "3:00 AM EET on November 11, 2017", 
+                "civil": "3:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "41", 
+                "metric": "5"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "98", 
+            "wspd": {
+                "english": "8", 
+                "metric": "13"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "131"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "93", 
+            "windchill": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "qpf": {
+                "english": "0.02", 
+                "metric": "1"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "72", 
+            "mslp": {
+                "english": "29.28", 
+                "metric": "992"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "4", 
+                "hour_padded": "04", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510365600", 
+                "pretty": "4:00 AM EET on November 11, 2017", 
+                "civil": "4:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "99", 
+            "wspd": {
+                "english": "9", 
+                "metric": "14"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "126"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "95", 
+            "windchill": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.02", 
+                "metric": "1"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "74", 
+            "mslp": {
+                "english": "29.25", 
+                "metric": "991"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "5", 
+                "hour_padded": "05", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510369200", 
+                "pretty": "5:00 AM EET on November 11, 2017", 
+                "civil": "5:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "100", 
+            "wspd": {
+                "english": "10", 
+                "metric": "16"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "124"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "94", 
+            "windchill": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "54", 
+            "mslp": {
+                "english": "29.22", 
+                "metric": "990"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "6", 
+                "hour_padded": "06", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510372800", 
+                "pretty": "6:00 AM EET on November 11, 2017", 
+                "civil": "6:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "100", 
+            "wspd": {
+                "english": "11", 
+                "metric": "18"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "126"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "96", 
+            "windchill": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "48", 
+            "mslp": {
+                "english": "29.19", 
+                "metric": "988"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "7", 
+                "hour_padded": "07", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510376400", 
+                "pretty": "7:00 AM EET on November 11, 2017", 
+                "civil": "7:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "100", 
+            "wspd": {
+                "english": "11", 
+                "metric": "18"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "118"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "98", 
+            "windchill": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "67", 
+            "mslp": {
+                "english": "29.17", 
+                "metric": "988"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "8", 
+                "hour_padded": "08", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510380000", 
+                "pretty": "8:00 AM EET on November 11, 2017", 
+                "civil": "8:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "100", 
+            "wspd": {
+                "english": "11", 
+                "metric": "18"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "116"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "99", 
+            "windchill": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.02", 
+                "metric": "1"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "70", 
+            "mslp": {
+                "english": "29.14", 
+                "metric": "987"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "9", 
+                "hour_padded": "09", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510383600", 
+                "pretty": "9:00 AM EET on November 11, 2017", 
+                "civil": "9:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "100", 
+            "wspd": {
+                "english": "10", 
+                "metric": "16"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "115"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "97", 
+            "windchill": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "60", 
+            "mslp": {
+                "english": "29.12", 
+                "metric": "986"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "10", 
+                "hour_padded": "10", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510387200", 
+                "pretty": "10:00 AM EET on November 11, 2017", 
+                "civil": "10:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "100", 
+            "wspd": {
+                "english": "10", 
+                "metric": "16"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "112"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "100", 
+            "windchill": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.02", 
+                "metric": "1"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "69", 
+            "mslp": {
+                "english": "29.09", 
+                "metric": "985"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "11", 
+                "hour_padded": "11", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510390800", 
+                "pretty": "11:00 AM EET on November 11, 2017", 
+                "civil": "11:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Rain", 
+            "icon": "rain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/rain.gif", 
+            "fctcode": "13", 
+            "sky": "100", 
+            "wspd": {
+                "english": "10", 
+                "metric": "16"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "111"
+            }, 
+            "wx": "Rain", 
+            "uvi": "0", 
+            "humidity": "99", 
+            "windchill": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.03", 
+                "metric": "1"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "85", 
+            "mslp": {
+                "english": "29.07", 
+                "metric": "984"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "12", 
+                "hour_padded": "12", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510394400", 
+                "pretty": "12:00 PM EET on November 11, 2017", 
+                "civil": "12:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Rain", 
+            "icon": "rain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/rain.gif", 
+            "fctcode": "13", 
+            "sky": "100", 
+            "wspd": {
+                "english": "9", 
+                "metric": "14"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "116"
+            }, 
+            "wx": "Rain", 
+            "uvi": "0", 
+            "humidity": "98", 
+            "windchill": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.03", 
+                "metric": "1"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "85", 
+            "mslp": {
+                "english": "29.05", 
+                "metric": "984"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "13", 
+                "hour_padded": "13", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510398000", 
+                "pretty": "1:00 PM EET on November 11, 2017", 
+                "civil": "1:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "100", 
+            "wspd": {
+                "english": "9", 
+                "metric": "14"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "125"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "97", 
+            "windchill": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.02", 
+                "metric": "1"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "71", 
+            "mslp": {
+                "english": "29.02", 
+                "metric": "983"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "14", 
+                "hour_padded": "14", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510401600", 
+                "pretty": "2:00 PM EET on November 11, 2017", 
+                "civil": "2:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "100", 
+            "wspd": {
+                "english": "9", 
+                "metric": "14"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "128"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "93", 
+            "windchill": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.02", 
+                "metric": "1"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "64", 
+            "mslp": {
+                "english": "29.01", 
+                "metric": "982"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "15", 
+                "hour_padded": "15", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510405200", 
+                "pretty": "3:00 PM EET on November 11, 2017", 
+                "civil": "3:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "41", 
+                "metric": "5"
+            }, 
+            "dewpoint": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "97", 
+            "wspd": {
+                "english": "8", 
+                "metric": "13"
+            }, 
+            "wdir": {
+                "dir": "SE", 
+                "degrees": "125"
+            }, 
+            "wx": "Light Rain", 
+            "uvi": "0", 
+            "humidity": "90", 
+            "windchill": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "qpf": {
+                "english": "0.02", 
+                "metric": "1"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "63", 
+            "mslp": {
+                "english": "28.99", 
+                "metric": "982"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "16", 
+                "hour_padded": "16", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510408800", 
+                "pretty": "4:00 PM EET on November 11, 2017", 
+                "civil": "4:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "40", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "89", 
+            "wspd": {
+                "english": "7", 
+                "metric": "11"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "123"
+            }, 
+            "wx": "Showers", 
+            "uvi": "0", 
+            "humidity": "89", 
+            "windchill": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "57", 
+            "mslp": {
+                "english": "28.98", 
+                "metric": "981"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "17", 
+                "hour_padded": "17", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510412400", 
+                "pretty": "5:00 PM EET on November 11, 2017", 
+                "civil": "5:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "39", 
+                "metric": "4"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "88", 
+            "wspd": {
+                "english": "7", 
+                "metric": "11"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "119"
+            }, 
+            "wx": "Showers", 
+            "uvi": "0", 
+            "humidity": "90", 
+            "windchill": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "34", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "38", 
+            "mslp": {
+                "english": "28.96", 
+                "metric": "981"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "18", 
+                "hour_padded": "18", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510416000", 
+                "pretty": "6:00 PM EET on November 11, 2017", 
+                "civil": "6:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "92", 
+            "wspd": {
+                "english": "7", 
+                "metric": "11"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "121"
+            }, 
+            "wx": "Showers", 
+            "uvi": "0", 
+            "humidity": "94", 
+            "windchill": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "35", 
+            "mslp": {
+                "english": "28.95", 
+                "metric": "980"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "19", 
+                "hour_padded": "19", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510419600", 
+                "pretty": "7:00 PM EET on November 11, 2017", 
+                "civil": "7:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "94", 
+            "wspd": {
+                "english": "6", 
+                "metric": "10"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "119"
+            }, 
+            "wx": "Showers", 
+            "uvi": "0", 
+            "humidity": "95", 
+            "windchill": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "35", 
+            "mslp": {
+                "english": "28.93", 
+                "metric": "980"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "20", 
+                "hour_padded": "20", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510423200", 
+                "pretty": "8:00 PM EET on November 11, 2017", 
+                "civil": "8:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "38", 
+                "metric": "3"
+            }, 
+            "dewpoint": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "93", 
+            "wspd": {
+                "english": "5", 
+                "metric": "8"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "119"
+            }, 
+            "wx": "Showers", 
+            "uvi": "0", 
+            "humidity": "95", 
+            "windchill": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "38", 
+            "mslp": {
+                "english": "28.93", 
+                "metric": "980"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "21", 
+                "hour_padded": "21", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510426800", 
+                "pretty": "9:00 PM EET on November 11, 2017", 
+                "civil": "9:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "dewpoint": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "81", 
+            "wspd": {
+                "english": "5", 
+                "metric": "8"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "120"
+            }, 
+            "wx": "Showers", 
+            "uvi": "0", 
+            "humidity": "98", 
+            "windchill": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "36", 
+            "mslp": {
+                "english": "28.92", 
+                "metric": "979"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "22", 
+                "hour_padded": "22", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510430400", 
+                "pretty": "10:00 PM EET on November 11, 2017", 
+                "civil": "10:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "37", 
+                "metric": "3"
+            }, 
+            "dewpoint": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "82", 
+            "wspd": {
+                "english": "5", 
+                "metric": "8"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "118"
+            }, 
+            "wx": "Showers", 
+            "uvi": "0", 
+            "humidity": "98", 
+            "windchill": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "33", 
+                "metric": "1"
+            }, 
+            "qpf": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "35", 
+            "mslp": {
+                "english": "28.92", 
+                "metric": "979"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "23", 
+                "hour_padded": "23", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "11", 
+                "mday_padded": "11", 
+                "yday": "314", 
+                "isdst": "0", 
+                "epoch": "1510434000", 
+                "pretty": "11:00 PM EET on November 11, 2017", 
+                "civil": "11:00 PM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Saturday", 
+                "weekday_name_night": "Saturday Night", 
+                "weekday_name_abbrev": "Sat", 
+                "weekday_name_unlang": "Saturday", 
+                "weekday_name_night_unlang": "Saturday Night", 
+                "ampm": "PM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "dewpoint": {
+                "english": "35", 
+                "metric": "2"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "83", 
+            "wspd": {
+                "english": "4", 
+                "metric": "6"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "113"
+            }, 
+            "wx": "Showers", 
+            "uvi": "0", 
+            "humidity": "97", 
+            "windchill": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "36", 
+            "mslp": {
+                "english": "28.91", 
+                "metric": "979"
+            }
+        }, 
+        {
+            "FCTTIME": {
+                "hour": "0", 
+                "hour_padded": "00", 
+                "min": "00", 
+                "min_unpadded": "0", 
+                "sec": "0", 
+                "year": "2017", 
+                "mon": "11", 
+                "mon_padded": "11", 
+                "mon_abbrev": "Nov", 
+                "mday": "12", 
+                "mday_padded": "12", 
+                "yday": "315", 
+                "isdst": "0", 
+                "epoch": "1510437600", 
+                "pretty": "12:00 AM EET on November 12, 2017", 
+                "civil": "12:00 AM", 
+                "month_name": "November", 
+                "month_name_abbrev": "Nov", 
+                "weekday_name": "Sunday", 
+                "weekday_name_night": "Sunday Night", 
+                "weekday_name_abbrev": "Sun", 
+                "weekday_name_unlang": "Sunday", 
+                "weekday_name_night_unlang": "Sunday Night", 
+                "ampm": "AM", 
+                "tz": "", 
+                "age": "", 
+                "UTCDATE": ""
+            }, 
+            "temp": {
+                "english": "36", 
+                "metric": "2"
+            }, 
+            "dewpoint": {
+                "english": "35", 
+                "metric": "2"
+            }, 
+            "condition": "Chance of Rain", 
+            "icon": "chancerain", 
+            "icon_url": "http://icons.wxug.com/i/c/k/nt_chancerain.gif", 
+            "fctcode": "12", 
+            "sky": "84", 
+            "wspd": {
+                "english": "4", 
+                "metric": "6"
+            }, 
+            "wdir": {
+                "dir": "ESE", 
+                "degrees": "109"
+            }, 
+            "wx": "Showers", 
+            "uvi": "0", 
+            "humidity": "97", 
+            "windchill": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "heatindex": {
+                "english": "-9999", 
+                "metric": "-9999"
+            }, 
+            "feelslike": {
+                "english": "32", 
+                "metric": "0"
+            }, 
+            "qpf": {
+                "english": "0.01", 
+                "metric": "0"
+            }, 
+            "snow": {
+                "english": "0.0", 
+                "metric": "0"
+            }, 
+            "pop": "38", 
+            "mslp": {
+                "english": "28.9", 
+                "metric": "979"
+            }
+        }
+    ]
+}

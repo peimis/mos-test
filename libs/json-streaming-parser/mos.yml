@@ -1,0 +1,22 @@
+author: Miska Peippo <miska.peippo@gmail.com>
+type: lib
+description: JSON Streaming parser library
+version: 0.1
+
+sources:
+  - src
+
+includes:
+  - include
+
+build_vars:
+
+tags:
+  - c
+  - js
+  - json
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/arduino-compat
+
+manifest_version: 2017-09-29

@@ -3,8 +3,6 @@ type: lib
 description: HTTP fetch
 version: 0.1
 
-platforms: [ esp32 ]
-
 sources:
   - src
 includes:

@@ -32,7 +32,7 @@ extern "C" {
 bool mgos_deepsleep_now(int ms);
 bool mgos_deepsleep_enable_gpio_wakeup(int gpio);
 bool mgos_deepsleep_ms(int ms);
-
+void mgos_deepsleep_set_wakeup_mode(int mode);
 
 int mgos_deepsleep_count(void);
 bool mgos_deepsleep_init(void);

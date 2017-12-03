@@ -1,0 +1,33 @@
+author: peimis
+type: lib
+description: WUnderground weather library
+version: 0.1
+
+platforms:
+
+sources:
+  - src
+
+includes:
+  - include
+
+config_schema:
+  - ["wug", "o", {title: "WUG settings"}]
+  - ["wug.apikey", "s", "a0291ba2d850ab86", {title: "WUG API key"}]
+# Supported items conditions / forecast / hourly
+  - ["wug.features", "s", "conditions/hourly", {title: "Items to fetch"}]
+# lang:FI
+  - ["wug.options", "s", "", {title: "Language"}]
+  - ["wug.location", "s", "Finland/Nousiainen", {title: "Enable MQTT"}]
+
+build_vars:
+
+tags:
+  - c
+  - js
+  - json
+
+libs:
+  - origin: libs/json-streaming-parser
+
+manifest_version: 2017-09-29
