@@ -26,7 +26,9 @@ struct state {
 };
 
 
-WUGConditions_t currentConds;
+WUGConditions_t *currentConds;
+WUGHourly_t *hourlyData;
+
 
 #if 0
 //
@@ -134,7 +136,7 @@ static void http_cb(struct mg_connection *c, int ev, void *ev_data, void *ud)
 			LOG(LL_INFO, ("status %d bytes %llu : cb=%p args=%p ud=%p", state->status, state->written, state->cb, state->args, ud));
 			if (state->status == 200) {
 				/* Report success only for HTTP 200 downloads */
-				printf("OK: temp=%f pressure=%f wind=%f @ %d\n", currentConds.currentTemp, currentConds.pressure, currentConds.windSpeed, currentConds.windDir);
+				printf("OK: temp=%f pressure=%f wind=%f @ %d\n", currentConds->currentTemp, currentConds->pressure, currentConds->windSpeed, currentConds->windDir);
 
 				state->cb("ok", state->status, state->written, state->args);
 			} else {
@@ -180,7 +182,7 @@ int mgos_http_fetch(char *url, char *path, mgos_http_fetch_cb_t cb, void *args)
 	state->cb = cb;
 	state->args = args;
 
-	wug_client_init( &currentConds );
+	wug_client_init( );
 
 	LOG(LL_INFO, ("Start fetching %s to %s", url, path ? path : ""));
 	if (!mg_connect_http(mgos_get_mgr(), http_cb, state, url, NULL, NULL)) {

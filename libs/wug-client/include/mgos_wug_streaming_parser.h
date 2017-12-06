@@ -26,7 +26,9 @@ class WugJsonListener: public JsonListener
 		
 	public:
 		WugJsonListener(boolean isMetric);
-		void setConditions( WUGConditions_t *conditions );
+
+		WUGConditions_t *getConditions();
+		WUGHourly_t     *getHourlyForecast();
 
 		float getCurrentTemp();
 		float getCurrentPressure();

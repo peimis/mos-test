@@ -23,9 +23,9 @@ typedef struct WUGConditions {
 
 
 typedef struct WUGHourlyItem {
-	int		Temp;
+	int		temp;
 	int		dewPoint;
-	float	windSpeed;
+	int		windSpeed;
 	int		windDir;
 	int		windchill;
 	int		sky;
@@ -34,18 +34,38 @@ typedef struct WUGHourlyItem {
 	int		UV;
 	float	qpf;
 	float   snow;
+	float   pressure;
 	float   feelslike;
-	uint32_t	forecastTime;
+	uint32_t	time;
 	char    *hourlyIcon;
 	char    *hourlyCondition;
 } WUGHourlyItem_t;
 
 
 typedef struct WUGHourly {
-	WUGHourlyItem_t	hourlydata[24];
+	WUGHourlyItem_t	data[24];
 	uint32_t		forecastTime;
 	int				currentIndex;
 } WUGHourly_t;
+
+
+// breadcrumbs for the current key
+//
+struct parent_key
+{
+	char *name;
+	SLIST_ENTRY(parent_key) entries;
+};
+
+
+struct parent_key_breadcrumbs
+{
+	int count;
+	SLIST_HEAD(breadcrumbs, parent_key) breadcrumbs;
+};
+
+
+
 
 /* FFI-able signature of the function that receives response to a request. */
 typedef int (*mgos_wug_data_cb_t)(int status, char *result, void *args);
@@ -54,8 +74,10 @@ typedef int (*mgos_wug_data_cb_t)(int status, char *result, void *args);
 extern "C" {
 #endif
 
-void wug_client_init(WUGConditions_t *c);
-void wug_client_set_conditions(WUGConditions_t *c);
+void wug_client_init(void);
+WUGConditions_t * wug_client_get_conditions_data(void);
+WUGHourly_t * wug_client_get_hourly_forecast_data(void);
+
 int mgos_wug_get_conditions(int data, mgos_wug_data_cb_t cb, void *args);
 
 #ifdef __cplusplus

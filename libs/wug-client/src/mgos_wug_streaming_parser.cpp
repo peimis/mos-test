@@ -1,22 +1,13 @@
+#include "mgos.h"
+
 #include "mgos_json_streaming_parser.h"
 #include "mgos_wug_streaming_parser.h"
 #include "mgos_wug_client.h"
 
-#include "mgos.h"
 
 WugJsonListener * wug_listener = new WugJsonListener(true);
 
-struct http_get_state {
-	mgos_wug_data_cb_t cb;			/* Callback function */
-	WUGConditions_t *conds;
-	void *args;						/* Callback args */
-	int status;                     /* Request status */
-	int64_t written;                /* Number of bytes written */
-};
-
-
-
-static void http_cb(struct mg_connection *c, int ev, void *ev_data, void *ud);
+static struct parent_key_breadcrumbs crumbs;
 
 
 // -----------------------------------------------------------------------
@@ -28,13 +19,17 @@ WugJsonListener::WugJsonListener(boolean _isMetric) {
 	if (nullptr == hourly) {
 		LOG(LL_INFO, ("Cannot allocate hourly data"));
 	}
+	conditions = (WUGConditions_t *)calloc(1, sizeof(WUGConditions_t));
+	if (nullptr == conditions) {
+		LOG(LL_INFO, ("Cannot allocate conditions data"));
+	}
 }
 
 
 // -----------------------------------------------------------------------
 //
-void WugJsonListener::key(String keystring) {
-//	const char *c_str = keystring.c_str();
+void WugJsonListener::key(String keystring)
+{
 
 	currentKey = String(keystring);
 
@@ -42,16 +37,21 @@ void WugJsonListener::key(String keystring) {
 		inCurrentObservation = true;
 		inHourlyForecast = false;
 		inForecast = false;
+		LOG(LL_INFO, ("Starting '%s'", currentKey.c_str()));
 	}
 	else if (currentKey == "hourly_forecast") {
 		inCurrentObservation = false;
 		inHourlyForecast = true;
 		inForecast = false;
+		hourly->currentIndex = -1;
+		LOG(LL_INFO, ("Starting '%s'", currentKey.c_str()));
+
 	}
 	else if (currentKey == "forecast") {
 		inCurrentObservation = false;
 		inHourlyForecast = false;
 		inForecast = true;
+		LOG(LL_INFO, ("Starting '%s'", currentKey.c_str()));
 	}
 
 //	printf("'%s' : ", c_str);
@@ -63,40 +63,82 @@ void WugJsonListener::hourlyForecastValue(String value)
 {
 	if (currentParent == "FCTTIME") {
 		if (currentKey == "epoch") {
+			hourly->currentIndex++;
+			if (hourly->currentIndex > 23) {
+				hourly->currentIndex = 0;
+				LOG(LL_WARN, ("Current index overflow"));
+			}
+			hourly->data[ hourly->currentIndex ].time = value.toInt();
 		}
 	}
 	else if (currentParent == "temp") {
-		
+		if (isMetric && currentKey == "metric") {
+			hourly->data[ hourly->currentIndex ].temp = value.toInt();
+		}
+		else if (!isMetric && currentKey == "english") {
+			hourly->data[ hourly->currentIndex ].temp = value.toInt();
+		}
 	}
 	else if (currentParent == "dewpoint") {
-		
+		if (isMetric && currentKey == "metric") {
+			hourly->data[ hourly->currentIndex ].dewPoint = value.toInt();
+		}
+		else if (!isMetric && currentKey == "english") {
+			hourly->data[ hourly->currentIndex ].dewPoint = value.toInt();
+		}
 	}
 	else if (currentParent == "wspd") {
-		
+		if (isMetric && currentKey == "metric") {
+			hourly->data[ hourly->currentIndex ].windSpeed = value.toInt();
+		}
+		else if (!isMetric && currentKey == "english") {
+			hourly->data[ hourly->currentIndex ].windSpeed = value.toInt();
+		}
 	}
 	else if (currentParent == "wdir") {
-		
+		if (currentKey == "degrees") {
+			hourly->data[ hourly->currentIndex ].windDir = value.toInt();
+		}
 	}
 	else if (currentParent == "windchill") {
-		
+		if (isMetric && currentKey == "metric") {
+			hourly->data[ hourly->currentIndex ].windchill = value.toInt();
+		}
+		else if (!isMetric && currentKey == "english") {
+			hourly->data[ hourly->currentIndex ].windchill = value.toInt();
+		}
 	}
 	else if (currentParent == "feelslike") {
-		
+		if (isMetric && currentKey == "metric") {
+			hourly->data[ hourly->currentIndex ].feelslike = value.toInt();
+		}
+		else if (!isMetric && currentKey == "english") {
+			hourly->data[ hourly->currentIndex ].feelslike = value.toInt();
+		}
 	}
 	else if (currentParent == "qpf") {
-		
+		if (isMetric && currentKey == "metric") {
+			hourly->data[ hourly->currentIndex ].qpf = value.toFloat();
+		}
+		else if (!isMetric && currentKey == "english") {
+			hourly->data[ hourly->currentIndex ].qpf = value.toFloat();
+		}
 	}
 	else if (currentParent == "snow") {
-		
+		if (isMetric && currentKey == "metric") {
+			hourly->data[ hourly->currentIndex ].snow = value.toFloat();
+		}
+		else if (!isMetric && currentKey == "english") {
+			hourly->data[ hourly->currentIndex ].snow = value.toFloat();
+		}
 	}
 	else if (currentParent == "mslp") {
-		
-	}
-	else if (currentParent == "wdir") {
-		
-	}
-	else if (currentParent == "wdir") {
-		
+		if (isMetric && currentKey == "metric") {
+			hourly->data[ hourly->currentIndex ].pressure = value.toFloat();
+		}
+		else if (!isMetric && currentKey == "english") {
+			hourly->data[ hourly->currentIndex ].pressure = value.toFloat();
+		}
 	}
 }
 
@@ -244,45 +286,76 @@ void WugJsonListener::currentObsevationValue(String value)
 }
 
 
-
-
 // -----------------------------------------------------------------------
 //
-void WugJsonListener::value(String value) {
-//	const char *c_str = value.c_str();
-//	printf("'%s',\n", c_str);
-
+void WugJsonListener::value(String value)
+{
 	if (inCurrentObservation) currentObsevationValue(value);
 	else if (inHourlyForecast) hourlyForecastValue(value);
 	else if (inForecast) forecastValue(value);
 	else {
-		LOG(LL_INFO, ("No use for value '%s'", value.c_str()));
+		LOG(LL_INFO, ("No use for value '%s' : '%s'", currentKey ? currentKey.c_str() : "", value.c_str()));
 	}
 }
 
 
 // -----------------------------------------------------------------------
 //
-void WugJsonListener::startObject() {
+void WugJsonListener::startObject()
+{
+	struct parent_key *parent = (struct parent_key *)calloc(1, sizeof(struct parent_key));
+	parent->name = (char *)calloc(1, 1+strlen(currentKey.c_str()));
+	strcpy(parent->name, currentKey.c_str());
 	currentParent = currentKey;
-	printf("'%s' { ", currentKey.c_str() );
+
+	SLIST_INSERT_HEAD(&crumbs.breadcrumbs, parent, entries);
+	crumbs.count++;
+
+	SLIST_FOREACH(parent, &crumbs.breadcrumbs, entries) {
+		printf("'%s' -> ", parent->name ? parent->name : "-" );
+	}
+//	printf("'%s' { ", currentKey.c_str() );
 }
 
-void WugJsonListener::endObject() {
-	printf(" }\n");
 
-	currentParent = "";
+// -----------------------------------------------------------------------
+//
+void WugJsonListener::endObject()
+{
+	struct parent_key *parent;
+
+    if( !SLIST_EMPTY(&crumbs.breadcrumbs)) {
+		crumbs.count--;
+		parent = SLIST_FIRST(&crumbs.breadcrumbs);
+		if (parent->name) {
+			LOG(LL_INFO, ("Remove '%s'", parent->name));
+			free(parent->name);
+			}
+		SLIST_REMOVE_HEAD(&crumbs.breadcrumbs, entries);
+		if (parent) {
+			free(parent);
+		}
+		if (!SLIST_EMPTY(&crumbs.breadcrumbs)) {
+			parent = SLIST_FIRST(&crumbs.breadcrumbs);
+			printf("next head is '%s'\n", parent->name ? parent->name : "?" );
+		}
+		currentParent = "";
+	} else  {
+		printf("List empty\n");
+		currentParent = "";
+	}
 }
 
+// -----------------------------------------------------------------------
+//
 void WugJsonListener::startArray() {
 	inArray = true;
-	printf(" [ ");
+//	printf(" [ ");
 }
-
 
 void WugJsonListener::endArray() {
 	inArray = false;
-	printf(" ] \n");
+//	printf(" ] \n");
 }
 
 
@@ -296,6 +369,7 @@ void WugJsonListener::endDocument() {
 	printf("\n === end document.\n");
 }
 
+
 // -----------------------------------------------------------------------
 //
 void WugJsonListener::whitespace(char c) {
@@ -304,7 +378,7 @@ void WugJsonListener::whitespace(char c) {
 
 
 // -----------------------------------------------------------------------
-
+//
 float WugJsonListener::getCurrentTemp(void)
 {
 	return conditions->currentTemp;
@@ -314,7 +388,6 @@ float WugJsonListener::getCurrentPressure(void)
 {
 	return conditions->pressure;
 }
-
 
 float WugJsonListener::getCurrentWindSpeed(void)
 {
@@ -326,203 +399,34 @@ int WugJsonListener::getCurrentWindDir(void)
 	return conditions->windDir;
 }
 
-
-void WugJsonListener::setConditions(WUGConditions_t * _conditions)
+WUGConditions_t * WugJsonListener::getConditions()
 {
-	conditions = _conditions;
+	return conditions;
+}
+
+WUGHourly_t *WugJsonListener::getHourlyForecast()
+{
+	return hourly;
 }
 
 
-// ====================================================================================
-// ffi:ed C functions
+// -----------------------------------------------------------------------
 //
-
-
-//
-//
-void wug_client_set_conditions(WUGConditions_t *conditions)
+WUGConditions_t * wug_client_get_conditions_data(void)
 {
-	wug_listener->setConditions(conditions);
+	return wug_listener->getConditions();
+}
+
+WUGHourly_t * wug_client_get_hourly_forecast_data(void)
+{
+	return wug_listener->getHourlyForecast();
 }
 
 
+
+// -----------------------------------------------------------------------
 //
-//
-void wug_client_init(WUGConditions_t *conditions)
+void wug_client_init(void)
 {
-	wug_listener->setConditions(conditions);
 	streaming_parser_set_listener(wug_listener);
-}
-
-
-//
-//
-char *wug_get_url(void)
-{
-	int i, len=0;
-	const char * const url_strings[] = {
-		"http://api.wunderground.com/api",
-		mgos_sys_config_get_wug_apikey(),
-		mgos_sys_config_get_wug_features(),
-		mgos_sys_config_get_wug_options(),
-		"q",
-		mgos_sys_config_get_wug_location(),
-	};
-
-	const int strings = (sizeof(url_strings)/sizeof(*url_strings));
-	printf("Paste %d items\n", strings);
-	for (i=0; i<strings; i++) {
-		if (url_strings[i]) {
-			int l = strlen(url_strings[i]);
-			printf("string '%s'\n", url_strings[i]);
-			len += l;
-			printf("len %d -> %d\n", l, len);
-		}
-	}
-	len += 6+strings; // make some room for slashes and '.json'
-
-	char *url = (char*)calloc(1, 1+len );
-
-	char *ptr = url;
-	for (i=0; i<strings; i++) {
-		if (url_strings[i]) {
-			int l = strlen(url_strings[i]);
-			printf("len %d -> %d\n", l, len);
-			memcpy(ptr, url_strings[i], l);
-			ptr += l;
-			*ptr++ = '/';
-		}
-	}
-	ptr--;
-	strcpy(ptr, ".json");
-
-	// http_url = 'http://api.wunderground.com/api/' + apikey + '/' + features + '/' + options + 'q/' + location + '.json';
-
-	printf("URL = '%s' len=%d %d\n", url, strlen(url), len);
-
-	return url;
-}
-
-
-//
-// typedef int (*mgos_wug_data_cb_t)(int status, void *result_struct, void *args);
-//
-int mgos_wug_get_conditions(int data, mgos_wug_data_cb_t cb, void *args)
-{
-	struct http_get_state *state = NULL;
-	int rv = -1;
-
-	char *url = wug_get_url();
-	(void)data;
-
-	if (url == NULL) {
-		LOG(LL_WARN, ("=== url needed ==="));
-		goto done;
-	}
-
-	if ((state = (struct http_get_state *)calloc(1, sizeof(*state))) == NULL) {
-		LOG(LL_WARN, ("=== cannot alloc %d ===", sizeof(*state)));
-		goto done;
- 	}
-
-	if((state->conds = (WUGConditions_t *)calloc(1, sizeof(WUGConditions_t))) == NULL )
-	{
-		LOG(LL_WARN, ("=== cannot alloc %d ===", sizeof(WUGConditions_t)));
-		goto done;		
-	}
-
-	state->written = 0;
-	state->cb = cb;
-	state->args = args;
-
-	wug_client_init( state->conds );
-
-	LOG(LL_INFO, ("Start fetching from '%s'", url ));
-	if (!mg_connect_http(mgos_get_mgr(), http_cb, state, url, NULL, NULL)) {
-		LOG(LL_WARN, ("=== malformed url %s ===", url));
-		free(state);
-		state = NULL;
-		free(state->conds);
-		goto done;
-	}
-
-	rv = 0;
-
-done:
-	LOG(LL_INFO, ("Started to GET '%s' ..", url ? url : ""));
-	if (url) free(url);
-	if (NULL == state) cb(500, NULL, args);
-
-	return rv;
-}
-
-
-static int fetch_state = 0;
-
-//
-//
-static void http_cb(struct mg_connection *c, int ev, void *ev_data, void *args)
-{
-	struct http_message *hm = (struct http_message *) ev_data;
-	struct http_get_state *state = (struct http_get_state *) args;
-
-	switch (ev) { 
-		case MG_EV_CONNECT:
-			state->status = *(int *) ev_data;
-			fetch_state = 0;
-			break;
-
-		case MG_EV_HTTP_CHUNK: {
-			/*
-			 * Write data to file.
-		     */
-			size_t n=0;
-
-			printf("chunk %d / %d\n", hm->body.len, (int)state->written);
-
-			if (0 == fetch_state) {
-				n = hm->body.len;
-				char * buf = (char *)calloc(1, n);
-				memcpy(buf, hm->body.p, n);
-				streaming_parser_push_data(buf, n);
-				free(buf);
-			}
-
-			if (n != hm->body.len) {
-				c->flags |= MG_F_CLOSE_IMMEDIATELY;
-				state->status = 500;
-			}
-			state->written += n;
-
-			c->flags |= MG_F_DELETE_CHUNK;
-			break;
-		}
-
-		case MG_EV_HTTP_REPLY:
-			/* Only when we successfully got full reply, set the status. */
-			state->status = hm->resp_code;
-			fetch_state = 1;
-			LOG(LL_INFO, ("Finished fetching status=%d", state->status));
-			c->flags |= MG_F_CLOSE_IMMEDIATELY;
-			break;
-
-
-		case MG_EV_CLOSE:
-			LOG(LL_INFO, ("status %d bytes %llu : cb=%p args=%p ud=%p", state->status, state->written, state->cb, state->args, args));
-			if (state->status == 200) {
-				/* Report success only for HTTP 200 downloads */
-				char *resp = (char *)calloc(1, 100);
-				sprintf(resp, "{\"temp\":%.2f, \"pressure\":%.2f \"wind\":%.2f \"winddir\":%d}", state->conds->currentTemp, 
-					state->conds->pressure, state->conds->windSpeed, state->conds->windDir);
-				printf("OK : '%s'\n", resp);
-				state->cb(state->status, resp, state->args);
-				free(resp);
-			} else {
-				state->cb(state->status, NULL, state->args);
-			}
-
-			free(state->conds);
-			free(state);
-			break;
-	}
 }
