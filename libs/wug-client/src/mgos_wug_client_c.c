@@ -131,17 +131,20 @@ static void http_cb(struct mg_connection *c, int ev, void *ev_data, void *args)
 				int i;
 				/* Report success only for HTTP 200 downloads */
 				char *resp = (char *)calloc(1, 100);
-				sprintf(resp, "{\"temp\":%.2f, \"pressure\":%.2f \"wind\":%.2f \"winddir\":%d}", state->currentConditions->currentTemp, 
-					state->currentConditions->pressure, state->currentConditions->windSpeed, state->currentConditions->windDir);
+				struct json_out out = JSON_OUT_BUF(resp, 100);
+
+				json_printf(&out, "{%Q: %2.1f, %Q: %2.1f, %Q: %2.1f %Q: %d}", "temp", state->currentConditions->currentTemp,
+					"pressure", state->currentConditions->pressure, "wind", state->currentConditions->windSpeed/3.6, "winddir", state->currentConditions->windDir);
 				printf("OK : '%s'\n", resp);
 
-				for (i=0; i<24; i++) {
+				for (i=0; i<(sizeof(state->hourlyForecast->data) / sizeof(state->hourlyForecast->data[0])) ; i++) {
 					WUGHourlyItem_t *item = &state->hourlyForecast->data[i];
 
 					time_t now = item->time; // TZ=GMT+1
 					struct tm* tm_info = gmtime(&now);
 
-					printf("%d.%d @ %d : %d C %f kPa, %d m/s @ %d\n", tm_info->tm_mday, 1+tm_info->tm_mon, tm_info->tm_hour, item->temp, item->pressure, item->windSpeed, item->windDir);
+					printf("%2d.%2d. @ %2d : %d C %d kPa, %2.1f m/s @ %d '%s'\n", tm_info->tm_mday, 1+tm_info->tm_mon, tm_info->tm_hour,
+						item->temp, (int)item->pressure, ((float)item->windSpeed/3.6), item->windDir, item->hourlyIcon ? item->hourlyIcon:"?");
 				}
 
 				state->cb(state->status, resp, state->args);

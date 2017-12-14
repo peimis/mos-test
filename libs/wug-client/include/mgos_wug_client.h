@@ -22,6 +22,12 @@ typedef struct WUGConditions {
 } WUGConditions_t;
 
 
+typedef struct WUGForecast {
+	int		temp;
+	int		dewPoint;
+	int		windSpeed;
+} WUGForecast_t;
+
 typedef struct WUGHourlyItem {
 	int		temp;
 	int		dewPoint;
@@ -43,9 +49,8 @@ typedef struct WUGHourlyItem {
 
 
 typedef struct WUGHourly {
-	WUGHourlyItem_t	data[24];
+	WUGHourlyItem_t	data[36];
 	uint32_t		forecastTime;
-	int				currentIndex;
 } WUGHourly_t;
 
 
@@ -60,7 +65,8 @@ struct parent_key
 
 struct parent_key_breadcrumbs
 {
-	int count;
+	int		count;
+	int		hasArray;
 	SLIST_HEAD(breadcrumbs, parent_key) breadcrumbs;
 };
 

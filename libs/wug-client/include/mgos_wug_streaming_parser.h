@@ -6,28 +6,42 @@
 #include "JsonListener.h"
 #include "mgos_wug_client.h"
 
+#define maxKeyLen 31
+
+enum decState_t {
+	decoderStateInit = 0,
+	decoderStateObservation,
+	decoderStateForecast,
+	decoderStateHourlyForecast,
+};
+
+
 class WugJsonListener: public JsonListener
 {
 	private:
 		WUGConditions_t *conditions = nullptr;
+		WUGForecast_t *forecast = nullptr;
 		WUGHourly_t *hourly = nullptr;
 
-		String	currentKey;
-		String	currentParent;
-		String	currentState;
+		char *	currentKey = nullptr;
+		char *	currentParent = nullptr;
+		char *	currentArray = nullptr;
+		int		currentArrayIndex = 0;
+		int		currentArrayLevel = 0;
+		boolean	inArray = false;
 
 		//
-		boolean	inCurrentObservation = false;
-		boolean	inHourlyForecast = false;
-		boolean	inForecast= false;
+		enum decState_t	decoderState = decoderStateInit;
 
-		boolean	inArray = false;
 		boolean isMetric = true;
-		
+		void insertParent(void);
+		void replaceParent(void);
+
 	public:
 		WugJsonListener(boolean isMetric);
 
 		WUGConditions_t *getConditions();
+		WUGForecast_t 	*getForecast();
 		WUGHourly_t     *getHourlyForecast();
 
 		float getCurrentTemp();
@@ -38,7 +52,6 @@ class WugJsonListener: public JsonListener
 		void hourlyForecastValue(String value);
 		void forecastValue(String value);
 		void currentObsevationValue(String value);
-
 
 		virtual void whitespace(char c);
 	  

@@ -23,121 +23,106 @@ WugJsonListener::WugJsonListener(boolean _isMetric) {
 	if (nullptr == conditions) {
 		LOG(LL_INFO, ("Cannot allocate conditions data"));
 	}
+	forecast = (WUGForecast_t *)calloc(1, sizeof(WUGForecast_t));
+	if (nullptr == forecast) {
+		LOG(LL_INFO, ("Cannot allocate forecast data"));
+	}
+
+	currentKey = (char *)calloc(1, maxKeyLen+1);
+	currentParent = (char *)calloc(1, maxKeyLen+1);
+	currentArray = (char *)calloc(1, maxKeyLen+1);
 }
 
-
-// -----------------------------------------------------------------------
-//
-void WugJsonListener::key(String keystring)
-{
-
-	currentKey = String(keystring);
-
-	if (currentKey == "current_observation") {
-		inCurrentObservation = true;
-		inHourlyForecast = false;
-		inForecast = false;
-		LOG(LL_INFO, ("Starting '%s'", currentKey.c_str()));
-	}
-	else if (currentKey == "hourly_forecast") {
-		inCurrentObservation = false;
-		inHourlyForecast = true;
-		inForecast = false;
-		hourly->currentIndex = -1;
-		LOG(LL_INFO, ("Starting '%s'", currentKey.c_str()));
-
-	}
-	else if (currentKey == "forecast") {
-		inCurrentObservation = false;
-		inHourlyForecast = false;
-		inForecast = true;
-		LOG(LL_INFO, ("Starting '%s'", currentKey.c_str()));
-	}
-
-//	printf("'%s' : ", c_str);
-}
 
 // -----------------------------------------------------------------------
 //
 void WugJsonListener::hourlyForecastValue(String value)
 {
-	if (currentParent == "FCTTIME") {
-		if (currentKey == "epoch") {
-			hourly->currentIndex++;
-			if (hourly->currentIndex > 23) {
-				hourly->currentIndex = 0;
-				LOG(LL_WARN, ("Current index overflow"));
+	if (!strcmp(currentParent, "FCTTIME")) {
+		if (!strcmp(currentKey, "epoch")) {
+			hourly->data[ currentArrayIndex ].time = value.toInt();
+			LOG(LL_INFO, ("New epoch time @ %d = %u", currentArrayIndex, hourly->data[ currentArrayIndex ].time));
+		}
+	}
+	else if (!strcmp(currentParent, "temp")) {
+		if (isMetric && !strcmp(currentKey, "metric")) {
+			hourly->data[ currentArrayIndex ].temp = value.toInt();
+		}
+		else if (!isMetric && !strcmp(currentKey, "english")) {
+			hourly->data[ currentArrayIndex ].temp = value.toInt();
+		}
+	}
+	else if (!strcmp(currentParent,  "dewpoint")) {
+		if (isMetric && !strcmp(currentKey, "metric")) {
+			hourly->data[ currentArrayIndex ].dewPoint = value.toInt();
+		}
+		else if (!isMetric && !strcmp(currentKey, "english")) {
+			hourly->data[ currentArrayIndex ].dewPoint = value.toInt();
+		}
+	}
+	else if (!strcmp(currentParent,  "wspd")) {
+		if (isMetric && !strcmp(currentKey, "metric")) {
+			hourly->data[ currentArrayIndex ].windSpeed = value.toInt();
+		}
+		else if (!isMetric && !strcmp(currentKey, "english")) {
+			hourly->data[ currentArrayIndex ].windSpeed = value.toInt();
+		}
+	}
+	else if (!strcmp(currentParent, "wdir")) {
+		if (!strcmp(currentKey, "degrees")) {
+			hourly->data[ currentArrayIndex ].windDir = value.toInt();
+		}
+	}
+	else if (!strcmp(currentParent, "windchill")) {
+		if (isMetric && !strcmp(currentKey, "metric")) {
+			hourly->data[ currentArrayIndex ].windchill = value.toInt();
+		}
+		else if (!isMetric && !strcmp(currentKey, "english")) {
+			hourly->data[ currentArrayIndex ].windchill = value.toInt();
+		}
+	}
+	else if (!strcmp(currentParent, "feelslike")) {
+		if (isMetric && !strcmp(currentKey, "metric")) {
+			hourly->data[ currentArrayIndex ].feelslike = value.toInt();
+		}
+		else if (!isMetric && !strcmp(currentKey, "english")) {
+			hourly->data[ currentArrayIndex ].feelslike = value.toInt();
+		}
+	}
+	else if (!strcmp(currentParent, "qpf")) {
+		if (isMetric && !strcmp(currentKey, "metric")) {
+			hourly->data[ currentArrayIndex ].qpf = value.toFloat();
+		}
+		else if (!isMetric && !strcmp(currentKey, "english")) {
+			hourly->data[ currentArrayIndex ].qpf = value.toFloat();
+		}
+	}
+	else if (!strcmp(currentParent, "snow")) {
+		if (isMetric && !strcmp(currentKey, "metric")) {
+			hourly->data[ currentArrayIndex ].snow = value.toFloat();
+		}
+		else if (!isMetric && !strcmp(currentKey, "english")) {
+			hourly->data[ currentArrayIndex ].snow = value.toFloat();
+		}
+	}
+	else if (!strcmp(currentParent, "mslp")) {
+		if (isMetric && !strcmp(currentKey, "metric")) {
+			hourly->data[ currentArrayIndex ].pressure = value.toFloat();
+		}
+		else if (!isMetric && !strcmp(currentKey, "english")) {
+			hourly->data[ currentArrayIndex ].pressure = value.toFloat();
+		}
+	}
+	else if (!strncmp(currentParent, "hourly_forecast", strlen("hourly_forecast"))) {
+		if (!strcmp(currentKey, "icon")) {
+			printf("got icon '%s' for index %d\n", value.c_str(), currentArrayIndex);
+
+			if (hourly->data[ currentArrayIndex ].hourlyIcon) {
+				free(hourly->data[ currentArrayIndex ].hourlyIcon);
 			}
-			hourly->data[ hourly->currentIndex ].time = value.toInt();
-		}
-	}
-	else if (currentParent == "temp") {
-		if (isMetric && currentKey == "metric") {
-			hourly->data[ hourly->currentIndex ].temp = value.toInt();
-		}
-		else if (!isMetric && currentKey == "english") {
-			hourly->data[ hourly->currentIndex ].temp = value.toInt();
-		}
-	}
-	else if (currentParent == "dewpoint") {
-		if (isMetric && currentKey == "metric") {
-			hourly->data[ hourly->currentIndex ].dewPoint = value.toInt();
-		}
-		else if (!isMetric && currentKey == "english") {
-			hourly->data[ hourly->currentIndex ].dewPoint = value.toInt();
-		}
-	}
-	else if (currentParent == "wspd") {
-		if (isMetric && currentKey == "metric") {
-			hourly->data[ hourly->currentIndex ].windSpeed = value.toInt();
-		}
-		else if (!isMetric && currentKey == "english") {
-			hourly->data[ hourly->currentIndex ].windSpeed = value.toInt();
-		}
-	}
-	else if (currentParent == "wdir") {
-		if (currentKey == "degrees") {
-			hourly->data[ hourly->currentIndex ].windDir = value.toInt();
-		}
-	}
-	else if (currentParent == "windchill") {
-		if (isMetric && currentKey == "metric") {
-			hourly->data[ hourly->currentIndex ].windchill = value.toInt();
-		}
-		else if (!isMetric && currentKey == "english") {
-			hourly->data[ hourly->currentIndex ].windchill = value.toInt();
-		}
-	}
-	else if (currentParent == "feelslike") {
-		if (isMetric && currentKey == "metric") {
-			hourly->data[ hourly->currentIndex ].feelslike = value.toInt();
-		}
-		else if (!isMetric && currentKey == "english") {
-			hourly->data[ hourly->currentIndex ].feelslike = value.toInt();
-		}
-	}
-	else if (currentParent == "qpf") {
-		if (isMetric && currentKey == "metric") {
-			hourly->data[ hourly->currentIndex ].qpf = value.toFloat();
-		}
-		else if (!isMetric && currentKey == "english") {
-			hourly->data[ hourly->currentIndex ].qpf = value.toFloat();
-		}
-	}
-	else if (currentParent == "snow") {
-		if (isMetric && currentKey == "metric") {
-			hourly->data[ hourly->currentIndex ].snow = value.toFloat();
-		}
-		else if (!isMetric && currentKey == "english") {
-			hourly->data[ hourly->currentIndex ].snow = value.toFloat();
-		}
-	}
-	else if (currentParent == "mslp") {
-		if (isMetric && currentKey == "metric") {
-			hourly->data[ hourly->currentIndex ].pressure = value.toFloat();
-		}
-		else if (!isMetric && currentKey == "english") {
-			hourly->data[ hourly->currentIndex ].pressure = value.toFloat();
+			hourly->data[ currentArrayIndex ].hourlyIcon = (char *)calloc(1, 1+strlen( value.c_str() ));
+			strcpy(hourly->data[ currentArrayIndex ].hourlyIcon, value.c_str() );
+//			memcpy(hourly->data[ currentArrayIndex ].hourlyIcon, value.c_str(), strlen( value.c_str() ));
 		}
 	}
 }
@@ -153,112 +138,111 @@ void WugJsonListener::forecastValue(String value)
 void WugJsonListener::currentObsevationValue(String value)
 {
 
-
 	// -----------------------------------------------
 	// Current temperature
-	if (currentKey == "temp_c" && isMetric) {
+	if (!strcmp(currentKey, "temp_c") && isMetric) {
 	    conditions->currentTemp = value.toFloat();
 	}
 
-	if (currentKey == "temp_f" && !isMetric) {
+	if (!strcmp(currentKey, "temp_f") && !isMetric) {
 	    conditions->currentTemp = value.toFloat();
 	}
 
 
 	// -----------------------------------------------
 	// Current windspeed
-	if (currentKey == "wind_kph" && isMetric) {
+	if (!strcmp(currentKey, "wind_kph") && isMetric) {
 	    conditions->windSpeed = value.toFloat();
 	}
 
-	if (currentKey == "wind_mph" && !isMetric) {
+	if (!strcmp(currentKey, "wind_mph") && !isMetric) {
 	    conditions->windSpeed = value.toFloat();
 	}
 
 	// -----------------------------------------------
 	// Current wind direction 0..359 deg
-	if (currentKey == "wind_degrees") {
+	if (!strcmp(currentKey, "wind_degrees")) {
 	    conditions->windDir = value.toInt();
 	}
 
 	// -----------------------------------------------
 	// Current humidity
-	if (currentKey == "relative_humidity") {
+	if (!strcmp(currentKey, "relative_humidity")) {
 	    conditions->humidity = value.toInt();
 	}
 
 	// -----------------------------------------------
 	// Current pressure
-	if (currentKey == "pressure_mb" && isMetric) {
+	if (!strcmp(currentKey, "pressure_mb") && isMetric) {
 	    conditions->pressure = value.toFloat();
 	}
 
-	if (currentKey == "pressure_in" && !isMetric) {
+	if (!strcmp(currentKey, "pressure_in") && !isMetric) {
 	    conditions->pressure = value.toFloat();
 	}
 
 	// -----------------------------------------------
 	// Current dew point
-	if (currentKey == "dewpoint_c" && isMetric) {
+	if (!strcmp(currentKey, "dewpoint_c") && isMetric) {
 	    conditions->dewPoint = value.toFloat();
 	}
 
-	if (currentKey == "dewpoint_f" && !isMetric) {
+	if (!strcmp(currentKey, "dewpoint_f") && !isMetric) {
 	    conditions->dewPoint = value.toFloat();
 	}
 
 	// -----------------------------------------------
 	// Current precipitation
-	if (currentKey == "precip_1hr_metric" && isMetric) {
+	if (!strcmp(currentKey, "precip_1hr_metric") && isMetric) {
 	    conditions->precipitation1hr = value.toFloat();
 	}
 
-	if (currentKey == "precip_1hr_in" && !isMetric) {
+	if (!strcmp(currentKey, "precip_1hr_in") && !isMetric) {
 	    conditions->precipitation1hr = value.toFloat();
 	}
 
 	// -----------------------------------------------
 	// Precipitation today
-	if (currentKey == "precip_today_metric" && isMetric) {
+	if (!strcmp(currentKey, "precip_today_metric") && isMetric) {
 	    conditions->precipitationToday = value.toFloat();
 	}
 
-	if (currentKey == "precip_today_in" && !isMetric) {
+	if (!strcmp(currentKey, "precip_today_in") && !isMetric) {
 	    conditions->precipitationToday = value.toFloat();
 	}
 
 	// -----------------------------------------------
 	// Feels like
-	if (currentKey == "feelslike_c" && isMetric) {
+	if (!strcmp(currentKey, "feelslike_c") && isMetric) {
 	    conditions->feelslike = value.toFloat();
 	}
 
-	if (currentKey == "feelslike_f" && !isMetric) {
+	if (!strcmp(currentKey, "feelslike_f") && !isMetric) {
 	    conditions->feelslike = value.toFloat();
 	}
 
 
 	// -----------------------------------------------
 	// UV Index
-	if (currentKey == "UV") {
+	if (!strcmp(currentKey, "UV")) {
 	    conditions->UV = value.toInt();
 	}
 
 	// -----------------------------------------------
 	// Observation Time
-	if (currentKey == "observation_epoch") {
+	if (!strcmp(currentKey, "observation_epoch")) {
 	    conditions->observationTime = value.toInt();
 	}
 
 	// -----------------------------------------------
 	// Local time when data is fetched
-	if (currentKey == "local_epoch") {
+	if (!strcmp(currentKey, "local_epoch")) {
 	    conditions->localTime = value.toInt();
 	}
 
 	// -----------------------------------------------
 	// Icon URL & name
-	if (currentKey == "icon_url") {
+	if (!strcmp(currentKey, "icon_url")) {
 		if (conditions->weatherIconURL) {
 			free(conditions->weatherIconURL);
 		}
@@ -266,7 +250,7 @@ void WugJsonListener::currentObsevationValue(String value)
 	    memcpy(conditions->weatherIconURL, value.c_str(), strlen( value.c_str() ));
 	}
 
-	if (currentKey == "icon") {
+	if (!strcmp(currentKey, "icon")) {
 		if (conditions->weatherIcon) {
 			free(conditions->weatherIcon);
 		}
@@ -276,7 +260,7 @@ void WugJsonListener::currentObsevationValue(String value)
 
 	// -----------------------------------------------
 	// Local time when data is fetched
-	if (currentKey == "weather") {
+	if (!strcmp(currentKey, "weather")) {
 		if (conditions->weatherText) {
 			free(conditions->weatherText);
 		}
@@ -288,39 +272,79 @@ void WugJsonListener::currentObsevationValue(String value)
 
 // -----------------------------------------------------------------------
 //
-void WugJsonListener::value(String value)
+void WugJsonListener::key(String keyString)
 {
-	if (inCurrentObservation) currentObsevationValue(value);
-	else if (inHourlyForecast) hourlyForecastValue(value);
-	else if (inForecast) forecastValue(value);
-	else {
-		LOG(LL_INFO, ("No use for value '%s' : '%s'", currentKey ? currentKey.c_str() : "", value.c_str()));
+	enum decState_t newState = decoderState;
+
+	strncpy(currentKey, keyString.c_str(), maxKeyLen);
+
+	if (strlen(keyString.c_str()) >= maxKeyLen) {
+		LOG(LL_WARN, ("too long key '%s'", keyString.c_str()));
+	}
+//	LOG(LL_INFO, ("'%s'", currentKey));
+
+	if (!strcmp(currentKey, "current_observation")) {
+		newState = decoderStateObservation;
+	}
+	else if (!strcmp(currentKey, "hourly_forecast")) {
+		newState = decoderStateHourlyForecast;
+		currentArrayIndex = 0;
+	}
+	else if (!strcmp(currentKey, "forecast")) {
+		newState = decoderStateForecast;
+	}
+
+	if (newState != decoderState) {
+		decoderState = newState;
+		LOG(LL_WARN, ("** Got key '%s' state=%d", currentKey, decoderState));
 	}
 }
 
 
 // -----------------------------------------------------------------------
 //
-void WugJsonListener::startObject()
+void WugJsonListener::value(String value)
+{
+	switch (decoderState)
+	{
+		case decoderStateObservation:
+			currentObsevationValue(value);
+		break;
+
+		case decoderStateForecast:
+			forecastValue(value);
+		break;
+
+		case decoderStateHourlyForecast:
+			hourlyForecastValue(value);
+		break;
+
+		default:
+			LOG(LL_WARN, ("Got key '%s' = '%s' in state %d", strlen(currentKey) ? currentKey : "", value.c_str(), decoderState));
+		break;
+	}
+}
+
+
+void WugJsonListener::insertParent()
 {
 	struct parent_key *parent = (struct parent_key *)calloc(1, sizeof(struct parent_key));
-	parent->name = (char *)calloc(1, 1+strlen(currentKey.c_str()));
-	strcpy(parent->name, currentKey.c_str());
-	currentParent = currentKey;
+	parent->name = (char *)calloc(1, 1+strlen(currentKey));
+	strcpy(parent->name, currentKey);
+	strcpy(currentParent, currentKey);
 
 	SLIST_INSERT_HEAD(&crumbs.breadcrumbs, parent, entries);
 	crumbs.count++;
+//	printf("Objects : ");
+//	SLIST_FOREACH(parent, &crumbs.breadcrumbs, entries) {
+//		printf("'%s' -> ", parent->name ? parent->name : "??" );
+//	}
+//	printf("\n");
 
-	SLIST_FOREACH(parent, &crumbs.breadcrumbs, entries) {
-		printf("'%s' -> ", parent->name ? parent->name : "-" );
-	}
-//	printf("'%s' { ", currentKey.c_str() );
 }
 
 
-// -----------------------------------------------------------------------
-//
-void WugJsonListener::endObject()
+void WugJsonListener::replaceParent()
 {
 	struct parent_key *parent;
 
@@ -328,34 +352,86 @@ void WugJsonListener::endObject()
 		crumbs.count--;
 		parent = SLIST_FIRST(&crumbs.breadcrumbs);
 		if (parent->name) {
-			LOG(LL_INFO, ("Remove '%s'", parent->name));
+//			LOG(LL_INFO, ("Drop '%s'", parent->name));
 			free(parent->name);
+			parent->name = NULL;
 			}
 		SLIST_REMOVE_HEAD(&crumbs.breadcrumbs, entries);
 		if (parent) {
 			free(parent);
+			parent = NULL;
 		}
 		if (!SLIST_EMPTY(&crumbs.breadcrumbs)) {
 			parent = SLIST_FIRST(&crumbs.breadcrumbs);
-			printf("next head is '%s'\n", parent->name ? parent->name : "?" );
+//			LOG(LL_INFO, ("prev parent: '%s'", parent->name ? parent->name : "??"));
+			strcpy(currentParent, parent->name);
 		}
-		currentParent = "";
 	} else  {
-		printf("List empty\n");
-		currentParent = "";
+		LOG(LL_WARN, ("List empty"));
 	}
 }
 
 // -----------------------------------------------------------------------
 //
-void WugJsonListener::startArray() {
-	inArray = true;
-//	printf(" [ ");
+void WugJsonListener::startObject()
+{
+//	LOG(LL_INFO, ("prev key='%s' parent='%s' arr='%s' index=%d\n", currentKey, currentParent, currentArray, currentArrayIndex));
+
+	if (inArray) {
+		if (0 == currentArrayLevel) {
+			strncpy(currentKey, currentArray, maxKeyLen);
+			sprintf(&currentKey[strlen(currentArray)], "[%d]", currentArrayIndex);
+//			LOG(LL_INFO, ("start index %d in array '%s' -> '%s'", currentArrayIndex, currentArray, currentKey));
+		}
+		currentArrayLevel++;
+	}
+
+	insertParent();
 }
+
+
+// -----------------------------------------------------------------------
+//
+void WugJsonListener::endObject()
+{
+	if (inArray) {
+		currentArrayLevel--;
+	}
+	if (0 == currentArrayLevel) {
+//		LOG(LL_INFO, ("end index %d in array '%s'", currentArrayIndex, currentArray));
+		currentArrayIndex++;
+		if (currentArrayIndex > (sizeof(hourly->data) / sizeof(hourly->data[0])) ) {
+			LOG(LL_WARN, ("currentArrayIndex overflow @ %d", currentArrayIndex));
+			currentArrayIndex = (sizeof(hourly->data) / sizeof(hourly->data[0]));
+		}
+	}
+
+	replaceParent();
+}
+
+
+// -----------------------------------------------------------------------
+//
+void WugJsonListener::startArray() {
+	if (inArray) {
+		LOG(LL_ERROR, ("Nested arrays not implemented"));
+	}
+	inArray = true;
+	currentArrayIndex = 0;
+	currentArrayLevel = 0;
+
+	strcpy(currentArray, currentKey);
+	LOG(LL_INFO, (" == '%s'", currentArray));
+
+	insertParent();
+}
+
 
 void WugJsonListener::endArray() {
 	inArray = false;
-//	printf(" ] \n");
+	LOG(LL_INFO, (" == '%s'", currentArray));
+	replaceParent();
+	currentArray[0] = '\0';
 }
 
 
